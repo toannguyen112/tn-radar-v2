@@ -6,29 +6,11 @@ const RIGHT_COLOR = 'FD12D1';
 const POINT_NUM = 3500;
 
 const getGradientStop = (ratio: number) => {
-  ratio = ratio > 1 ? 1 : ratio < 0 ? 0 : ratio;
-  const c0 = LEFT_COLOR.match(/.{1,2}/g).map(
-    (oct) => parseInt(oct, 16) * (1 - ratio)
-  );
-  const c1 = RIGHT_COLOR.match(/.{1,2}/g).map(
-    (oct) => parseInt(oct, 16) * ratio
-  );
-  const ci = [0, 1, 2].map((i) => Math.min(Math.round(c0[i] + c1[i]), 255));
-  const color = ci
-    .reduce((a, v) => (a << 8) + v, 0)
-    .toString(16)
-    .padStart(6, '0');
-  return `#${color}`;
+  return;
 };
 
-const calculateColor = (x) => {
-  const maxDiff = MAX_RADIUS * 2;
-  const distance = x + MAX_RADIUS;
-
-  const ratio = distance / maxDiff;
-  const stop = getGradientStop(ratio);
-
-  return stop;
+const calculateColor = (x: any) => {
+  return;
 };
 const randomFromInterval = (min: number, max: number) => {
   return Math.random() * (max - min) + min;
