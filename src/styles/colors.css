@@ -1,5 +1,10 @@
 /* //!STARTERCONF Remove this file after copying your desired color, this is a large file you should remove it. */
-
+.gradient-text {
+  background: linear-gradient(92deg, #fff 0.62%, #0075be 103.8%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .slate {
   --tw-color-primary-50: 248 250 252;
   --tw-color-primary-100: 241 245 249;

@@ -1,12 +1,37 @@
 import type { Config } from 'tailwindcss';
-import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    screens: {
+      xxs: '320px',
+      xs: '425px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1440px',
+      '2xl': '1920px',
+      'max-2xl': { max: '1919px' },
+      'max-xl': { max: '1439px' },
+      'max-lg': { max: '1023px' },
+      'max-md': { max: '767px' },
+      'max-sm': { max: '639px' },
+      'max-xs': { max: '424px' },
+    },
     extend: {
       fontFamily: {
-        primary: ['Inter', ...defaultTheme.fontFamily.sans],
+        montserrat: ['Montserrat'],
+        radar: ['radar'],
+        Khyay: ['Khyay'],
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          sm: '1.5rem',
+          lg: '3rem',
+          xl: '3.875rem',
+        },
       },
       colors: {
         primary: {
@@ -24,6 +49,10 @@ export default {
           950: 'rgb(var(--tw-color-primary-950) / <alpha-value>)',
         },
         dark: '#222222',
+        blue: '#1E9CD7',
+      },
+      backgroundColor: {
+        ' blue-600': '#0075BE',
       },
       keyframes: {
         flicker: {
