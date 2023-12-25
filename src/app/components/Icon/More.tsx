@@ -10,18 +10,18 @@ export default function More() {
       <path
         d='M22 1.5L2 21.5'
         stroke='white'
-        stroke-width='3'
-        stroke-miterlimit='10'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='3'
+        strokeMiterlimit='10'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
       <path
         d='M7.32857 1.5L22 1.5L22 16.1714'
         stroke='white'
-        stroke-width='3'
-        stroke-miterlimit='10'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='3'
+        strokeMiterlimit='10'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   );
