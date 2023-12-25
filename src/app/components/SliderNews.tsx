@@ -14,7 +14,7 @@ declare module 'swiper/react' {
   }
 }
 
-interface Post {
+interface News {
   attributes: {
     isNew: boolean;
     thumbnail: {
@@ -29,9 +29,7 @@ interface Post {
 
 // import required modules
 function SliderNews() {
-  const [news, setLastNews] = useState<Post[]>([]);
-
-  // const token = process.env.NEXT_API_URL;
+  const [news, setLastNews] = useState<News[]>([]);
   useEffect(() => {
     async function fetchData() {
       try {
@@ -42,13 +40,12 @@ function SliderNews() {
           }
         );
         const data = await response.json();
-        const arr: Post[] = [];
+        const arr: News[] = [];
         if (data?.data.length > 0) {
-          data?.data.map((val: Post) => {
+          data?.data.map((val: News) => {
             val.attributes.isNew ? arr.push(val) : console.log('');
           });
         }
-        console.log(arr.length);
         setLastNews(arr);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -85,11 +82,11 @@ function SliderNews() {
           news.map((post, index) => {
             return (
               <SwiperSlide key={index}>
-                <div className='h-[350px] overflow-hidden rounded-xl border border-[#323232] bg-[#18181A] lg:h-[450px]  2xl:h-[679px]'>
+                <div className='h-[350px] overflow-hidden rounded-xl border border-[#323232] bg-[#18181A] lg:h-[450px] xl:h-[600px] 2xl:h-[814px]'>
                   <img
                     src={`https://3.106.127.44.nip.io${post?.attributes?.thumbnail?.data?.attributes?.url}`}
                     alt='image'
-                    className='slider-image-content aspect-square h-full w-full'
+                    className='slider-image-content aspect-auto h-full w-full'
                   />
                 </div>
               </SwiperSlide>

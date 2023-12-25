@@ -17,7 +17,7 @@ export default function Header() {
           isHovered ? 'block translate-y-0' : 'hidden -translate-y-full'
         }`}
       >
-        <div className='container pt-10 max-xl:pt-6 max-md:pt-4'>
+        <div className='container pt-5'>
           <div className='flex items-center justify-between'>
             <div className='w-full max-w-[70px] md:max-w-[180px] 2xl:max-w-[312px]'>
               <img
@@ -48,38 +48,41 @@ export default function Header() {
               </div>
             </div>
           </div>
-          <div className='mt-8 grid grid-cols-12 max-md:mt-4'>
-            <div className='col-span-6 max-md:col-span-full'>
-              <p className='font-primary max-xs:text-[30px] text-[64px] font-normal uppercase leading-[60px] text-[#1E9CD7] max-lg:leading-none max-md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
-                about
-              </p>
-              <p className='font-montserrat mt-5 text-[18px] font-medium text-white max-lg:mb-8 max-md:mb-4 max-md:text-[14px]'>
-                We strive to deliver accurate, timely, and easily understandable
-                information about the ever-evolving landscape of decentralized
-                finance. Recognizing the immense potential and transformative
-                power of blockchain technology, we are dedicated to ensuring
-                that this potential reaches the widest possible audience.
-              </p>
-            </div>
-            <div className='col-span-2 max-lg:col-span-1 max-md:hidden'></div>
-            <div className='col-span-4 max-lg:col-span-5 max-md:col-span-full'>
-              <div className='relative h-[250px] w-full max-xl:h-[200px] max-md:h-[170px] '>
-                <img
-                  src='/images/bgTraffic.png'
-                  alt='wrapper hero'
-                  className='h-full w-full '
-                />
-                <div className='h-full w-full'>
+          <div className='mt-[181px] grid grid-cols-12 max-xl:mt-[40px] max-lg:mt-8 max-md:mt-4'>
+            <div className='col-span-10 col-start-2 grid grid-cols-12'>
+              <div className='col-span-6 max-md:col-span-full'>
+                <p className='font-primary max-xs:text-[30px] text-[64px] font-normal uppercase leading-[60px] text-[#1E9CD7] max-lg:leading-none max-md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
+                  about
+                </p>
+                <p className='font-montserrat mt-5 text-[18px] font-medium text-white max-lg:mb-8 max-md:mb-4 max-md:text-[14px]'>
+                  We strive to deliver accurate, timely, and easily
+                  understandable information about the ever-evolving landscape
+                  of decentralized finance. Recognizing the immense potential
+                  and transformative power of blockchain technology, we are
+                  dedicated to ensuring that this potential reaches the widest
+                  possible audience.
+                </p>
+              </div>
+              <div className='col-span-2 max-lg:col-span-1 max-md:hidden'></div>
+              <div className='col-span-4 max-lg:col-span-5 max-md:col-span-full'>
+                <div className='relative h-[250px] w-full max-xl:h-[200px] max-md:h-[170px] '>
                   <img
-                    src='/images/bgAbout.png'
+                    src='/images/bgMission.png'
                     alt='wrapper hero'
-                    className='absolute left-1/2 top-1/2 -z-10 h-[85%] w-[85%] -translate-x-1/2 -translate-y-1/2 '
+                    className='h-full w-full '
                   />
+                  <div className='h-full w-full'>
+                    <img
+                      src='/images/bgAbout.png'
+                      alt='wrapper hero'
+                      className='absolute left-1/2 top-1/2 -z-10 h-[82%] w-[82%] -translate-x-1/2 -translate-y-1/2 '
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className='mt-8 flex items-center gap-5 max-xl:hidden'>
+          <div className='mt-[50px] flex items-center gap-5 max-xl:hidden'>
             <TwitterHeader />
             <DiscordHeader />
             <TelegramHeader />
