@@ -5,11 +5,11 @@ import More from '@/app/components/Icon/More';
 export default function SectionRadarNews() {
   return (
     <div className='container mt-[149px] max-lg:mt-[32px] max-md:mt-[16px]'>
-      <div className='grid grid-cols-12'>
-        <div className='col-span-12 col-start-5 mb-[61px] w-full max-lg:col-start-1 max-lg:mb-[16px] max-lg:text-center max-lg:leading-none'>
-          <p className='font-radar max-xs:text-[40px] text-[64px] font-normal uppercase leading-[60px] text-white max-md:text-[50px]'>
+      <div className=''>
+        <div className='mb-[61px] w-full  max-lg:mb-[16px] text-right max-lg:text-center max-lg:leading-none'>
+          <p className='font-radar max-xs:text-[40px] xs:text-[8.4rem] font-normal uppercase leading-[60px] text-white max-md:text-[50px]'>
             RADAR{' '}
-            <span className='font-radar text-blue max-xs:text-[40px] text-[64px] leading-[60px] max-md:text-[50px]'>
+            <span className='font-radar text-blue max-xs:text-[40px] text-[8.4rem] leading-[60px] max-md:text-[50px]'>
               NEWS
             </span>
           </p>

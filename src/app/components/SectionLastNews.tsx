@@ -9,10 +9,10 @@ export default function SectionLastNews() {
           <div className='relative col-span-7 border-r border-white md:col-span-9'>
             <div className='flex h-full items-center gap-2'>
               <div className='flex gap-2 max-md:block'>
-                <p className='font-radar text-[96px] font-normal uppercase text-[#1E9CD7] max-lg:text-[40px] max-md:text-[35px] max-sm:text-[22px] lg:text-[50px]'>
+                <p className='font-radar text-[96px] max-2xl:text-[50px] max-xl:text-[50px] font-normal uppercase text-[#1E9CD7] max-lg:text-[40px] max-md:text-[35px] max-sm:text-[22px]'>
                   NOTABLE
                 </p>
-                <p className='font-radar text-[96px] font-normal uppercase text-white max-lg:text-[40px] max-md:text-[35px] max-sm:text-[22px] lg:text-[50px] '>
+                <p className='font-radar text-[96px] max-2xl:text-[50px] font-normal uppercase text-white max-lg:text-[40px] max-md:text-[35px] max-sm:text-[22px] '>
                   POST
                 </p>
               </div>
@@ -42,7 +42,7 @@ export default function SectionLastNews() {
             </div>
           </div>
           <div className='col-span-5 flex items-center md:col-span-3'>
-            <div className='h2 ml-auto mt-4 text-right font-extrabold text-white max-md:text-center md:mt-0'>
+            <div className='h2 font-radar ml-auto mt-4 text-right font-extrabold text-white max-md:text-center md:mt-0'>
               2023
             </div>
           </div>
