@@ -13,7 +13,7 @@ export default function SectionHeroAbout() {
       <div className='container h-full '>
         <div className='relative h-full'>
           <div className='font-radar gradient-text max-xs:text-[30px] absolute left-0	top-[230px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
-            <p>ABOUNT</p>
+            <p>ABOUT</p>
           </div>
         </div>
       </div>
