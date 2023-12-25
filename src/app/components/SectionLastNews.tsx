@@ -1,5 +1,4 @@
 import IconStar from '../components/Icon/Star';
-import SliderNews from '../components/SliderNews';
 
 export default function SectionLastNews() {
   return (
@@ -48,9 +47,9 @@ export default function SectionLastNews() {
           </div>
         </div>
       </div>
-      <div className='mt-[39px]	md:mt-[55px] xl:mt-[78px]'>
+      {/* <div className='mt-[39px]	md:mt-[55px] xl:mt-[78px]'>
         <SliderNews />
-      </div>
+      </div> */}
     </section>
   );
 }

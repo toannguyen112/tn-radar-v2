@@ -29,21 +29,22 @@ interface Post {
 // import required modules
 function SliderNews() {
   const [news, setLastNews] = useState<Post[]>([]);
-  const token = process.env.NEXT_PUBLIC_TOKEN;
+  // const token = process.env.NEXT_API_URL;
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await fetch(
-          'https://strapi-be-hg6l.onrender.com/api/posts-radars?filters[isLastNew][$eq]=true&populate=*',
+          'https://3.106.127.44.nip.io/api/posts-radar-v2s?populate=*',
           {
             method: 'GET',
             headers: {
               'Content-type': 'application/json',
-              Authorization: `Bearer ${token}`, // notice the Bearer before your token
+              Authorization: `Bearer 18288dd5c0600e8b785ec823c2bb562210879d7423a264f2e5b26cb25f86b45b46cd6b5c6450765d598d5d8166b3584fd0f43feb509008711aec23760db324f7cd2e495ab14c8fb3356a6da8dac5a035ae494556ceb207760f90a01311a39244622626534b730557cb4ccf1e5dfab49524f6c200701b6f7c2f165346f148600d`,
             },
           }
         );
         const data = await response.json();
+        console.log(data);
         setLastNews(data.data);
       } catch (error) {
         console.error('Error fetching data:', error);
