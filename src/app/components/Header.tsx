@@ -87,13 +87,15 @@ export default function Header() {
       </div>
       <div className='group-hover: container absolute left-1/2 z-10 w-full -translate-x-1/2 items-center pt-[33px]'>
         <div className='border-blue flex items-center justify-between rounded-[10px] border bg-[#0C334580] px-[50px] py-5 max-lg:px-[30px] max-md:px-[20px]'>
-          <div className='w-full max-w-[145px] md:max-w-[180px] max-h-[33px]'>
-            <img
-              src='/images/logo.png'
-              alt='wrapper hero'
-              className='h-full w-full object-cover'
-            />
-          </div>
+          <Link href="/">
+            <div className='w-full max-w-[145px] md:max-w-[180px] max-h-[33px]'>
+              <img
+                src='/images/logo.png'
+                alt='wrapper hero'
+                className='h-full w-full object-cover'
+              />
+            </div>
+          </Link>
           <div className='flex items-center gap-5 max-lg:hidden'>
             <TwitterHeader />
             <DiscordHeader />

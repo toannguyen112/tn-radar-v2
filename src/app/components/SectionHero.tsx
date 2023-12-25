@@ -12,11 +12,8 @@ export default function SectionHero() {
       />
       <div className='container h-full '>
         <div className='relative h-full'>
-          <div className='font-primary gradient-text max-xs:text-[30px] absolute left-0	top-[230px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
+          <div className='font-radar gradient-text max-xs:text-[30px] absolute left-0	top-[230px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
             <p>Unravels </p> <p>DeFi's Signals</p>
-          </div>
-          <div className='font-radar gradient-text max-xs:text-[30px] r-0 absolute right-0	top-[145px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
-            <p>2023</p>
           </div>
         </div>
       </div>
