@@ -68,26 +68,33 @@ const SectionAbout = () => {
       <div className='font-primary gradient-text max-xs:text-[30px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
         <p>ABOUT</p>
       </div>
-      <div className='grid grid-cols-12'>
-        <div className='col-span-9 col-start-4 mt-[51px] space-y-[30px] max-lg:col-span-full max-lg:col-start-1 max-lg:mt-8 max-md:mt-4'>
+      <div className='grid grid-cols-12 md:gap-x-[32px] max-lg:mt-8 max-md:mt-4 mt-[51px]'>
+        <div className='col-span-full md:col-span-3'>
+          <div className='aspect-w-1 aspect-h-1 h-[5360px]' >
+            <img
+              src='/video/network.gif'
+              alt='Your Alt Text'
+              className=' min-w-full object-cover'
+            />
+          </div>
+        </div>
+        <div className='col-span-9 col-start-4  space-y-[30px] max-lg:col-span-full max-lg:col-start-1 '>
           {arrayCollapse?.map((val: any, index: any) => {
             const isSelected = selectedItem === index;
             return (
               <>
                 <div
                   key={index}
-                  className={`flex h-[70px] w-full items-center justify-between rounded-xl border border-[#737373] px-[30px] py-[15px] transition-all duration-200 ${
-                    isSelected ? 'bg-[#005B97] duration-200' : 'duration-200'
-                  }`}
+                  className={`flex h-[70px] w-full items-center justify-between rounded-xl border border-[#737373] px-[30px] py-[15px] transition-all duration-200 ${isSelected ? 'bg-[#005B97] duration-200' : 'duration-200'
+                    }`}
                   onClick={() => handleItemClick(index)}
                 >
                   <p className='font-montserrat text-[32px] font-medium capitalize text-white max-lg:text-[20px] max-md:text-[14px]'>
                     {index + 1 + '. ' + val.title}
                   </p>
                   <div
-                    className={`cursor-pointer ${
-                      isSelected ? 'rotate-[90deg] duration-200' : ''
-                    }`}
+                    className={`cursor-pointer ${isSelected ? 'rotate-[90deg] duration-200' : ''
+                      }`}
                   >
                     <More />
                   </div>
