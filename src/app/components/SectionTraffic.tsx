@@ -50,7 +50,7 @@ export default function SectionTraffic() {
                   <p className='font-montserrat text-left text-[24px] font-semibold uppercase text-[#46ABDD] max-xl:text-[16px]'>
                     {val.title}
                   </p>
-                  <p className='font-radar mt-9 text-center text-[60px] font-semibold uppercase text-[#1E9CD7]'>
+                  <p className='font-radar mt-9 text-center text-[30px] xl:text-[60px] 2xl:text-[100px] font-semibold uppercase text-[#1E9CD7]'>
                     {val.content}
                   </p>
                 </div>
