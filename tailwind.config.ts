@@ -19,10 +19,13 @@ export default {
       'max-xs': { max: '424px' },
     },
     extend: {
+      // fontFamily: {
+      //   montserrat: ['Montserrat'],
+      //   radar: ['radar'],
+      //   Khyay: ['Khyay'],
+      // },
       fontFamily: {
-        montserrat: ['Montserrat'],
-        radar: ['radar'],
-        Khyay: ['Khyay'],
+        primary: ['radar'],
       },
       container: {
         center: true,
