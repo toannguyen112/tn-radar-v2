@@ -82,7 +82,7 @@ const SectionAbout = () => {
                   onClick={() => handleItemClick(index)}
                 >
                   <p className='font-montserrat text-[32px] font-medium capitalize text-white max-lg:text-[20px] max-md:text-[14px]'>
-                    {val.title}
+                    {index + 1 + '. ' + val.title}
                   </p>
                   <div
                     className={`cursor-pointer ${

@@ -13,8 +13,9 @@ export default function Header() {
     <div className=''>
       <div
         onMouseLeave={() => setIsHovered(false)}
-        className={`absolute left-0 top-0 z-20 w-full transform rounded-2xl border border-[#0B090C] bg-[#0B090C]  pb-10 transition-transform duration-200 max-xl:pb-6 max-md:pb-4 ${isHovered ? 'block translate-y-0' : 'hidden -translate-y-full'
-          }`}
+        className={`absolute left-0 top-0 z-20 w-full transform rounded-2xl border border-[#0B090C] bg-[#0B090C]  pb-10 transition-transform duration-200 max-xl:pb-6 max-md:pb-4 ${
+          isHovered ? 'block translate-y-0' : 'hidden -translate-y-full'
+        }`}
       >
         <div className='container pt-10 max-xl:pt-6 max-md:pt-4'>
           <div className='flex items-center justify-between'>
@@ -41,7 +42,7 @@ export default function Header() {
               </p>
               <div
                 onClick={() => setIsHovered(false)}
-                className=' relative z-10 flex  h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-white duration-300 ease-in-out lg:hover:border-[#00CC2D] lg:hover:bg-[#00CC2D] '
+                className=' relative z-10 flex  h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-white duration-300 ease-in-out lg:hover:border-[#3E97C3] lg:hover:bg-[#3E97C3] '
               >
                 <Menu />
               </div>
@@ -87,7 +88,7 @@ export default function Header() {
       </div>
       <div className='group-hover: container absolute left-1/2 z-10 w-full -translate-x-1/2 items-center pt-[33px]'>
         <div className='border-blue flex items-center justify-between rounded-[10px] border bg-[#0C334580] px-[50px] py-5 max-lg:px-[30px] max-md:px-[20px]'>
-          <div className='w-full max-w-[145px] md:max-w-[180px] max-h-[33px]'>
+          <div className='max-h-[33px] w-full max-w-[145px] md:max-w-[180px]'>
             <img
               src='/images/logo.png'
               alt='wrapper hero'
@@ -101,7 +102,7 @@ export default function Header() {
           </div>
           <div
             onClick={() => setIsHovered(true)}
-            className=' relative z-10 flex  h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-white duration-300 ease-in-out lg:hover:border-[#00CC2D] lg:hover:bg-[#00CC2D] '
+            className=' relative z-10 flex  h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-white duration-300 ease-in-out lg:hover:border-[#3E97C3] lg:hover:bg-[#3E97C3] '
           >
             <Menu />
           </div>

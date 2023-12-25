@@ -1,4 +1,5 @@
 // Import Swiper styles
+import CountUp from 'react-countup';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 declare module 'swiper/react' {
@@ -14,15 +15,15 @@ declare module 'swiper/react' {
 const arrayTraffic = [
   {
     title: 'follower twitter',
-    content: '2K',
+    content: 2,
   },
   {
     title: 'Monthly transaction',
-    content: '100K',
+    content: 100,
   },
   {
     title: 'Monthly Impression',
-    content: '500K',
+    content: 500,
   },
 ];
 export default function SectionTraffic() {
@@ -46,12 +47,14 @@ export default function SectionTraffic() {
                   alt='wrapper hero'
                   className='h-full w-full object-cover'
                 />
-                <div className='absolute left-0 top-0 w-full p-[36px] max-xl:p-4'>
+                <div className='absolute left-5 top-5 w-full '>
                   <p className='font-montserrat text-left text-[24px] font-semibold uppercase text-[#46ABDD] max-xl:text-[16px]'>
                     {val.title}
                   </p>
+                </div>
+                <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
                   <p className='font-radar mt-9 text-center text-[60px] font-semibold uppercase text-[#1E9CD7]'>
-                    {val.content}
+                    <CountUp start={0} end={val.content} duration={4} />K
                   </p>
                 </div>
               </div>

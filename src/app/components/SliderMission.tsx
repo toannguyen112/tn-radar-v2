@@ -116,13 +116,17 @@ export default function SliderMission() {
               slidesPerView: 3,
               spaceBetween: 35,
             },
+            1920: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
           }}
-          className='mySwiper xs:h-[335px] max-xs:h-[290px] h-[431px]'
+          className='mySwiper xs:h-[335px] max-xs:h-[290px] 2xl: xl:h-[431px]'
         >
           {arrayMission.map((val: any, index: any) => {
             return (
               <SwiperSlide key={index}>
-                <div className='xxs:h-[170px] xs:h-[230px] relative md:h-[205px] lg:h-[174px] xl:h-[247px] 2xl:h-[340px]'>
+                <div className='xxs:h-[170px] xs:h-[230px] relative md:h-[205px] lg:h-[174px] xl:h-[247px] 2xl:h-[247px]'>
                   <div className='absolute right-[43px] top-[14px] max-md:right-[20px] max-md:top-[5px]'>
                     <p className='font-radar text-[24px] capitalize text-white max-md:text-[18px]'>
                       {val.index}
