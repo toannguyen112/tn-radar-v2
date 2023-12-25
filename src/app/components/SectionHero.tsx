@@ -15,14 +15,11 @@ export default function SectionHero() {
           <div className='font-primary gradient-text max-xs:text-[30px] absolute left-0	top-[230px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
             <p>Unravels </p> <p>DeFi's Signals</p>
           </div>
-          <div className='font-radar gradient-text max-xs:text-[30px] r-0 absolute right-0	top-[145px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
-            <p>2023</p>
-          </div>
         </div>
       </div>
       <div className='z-9 absolute bottom-0 h-[100px] w-full 2xl:max-h-[236px]'>
         <div className='container absolute left-1/2 top-[30px] z-10 -translate-x-1/2 max-lg:hidden'>
-          <p className='font-radar max-xs:text-[40px] text-[64px] font-normal uppercase leading-[60px] text-white max-md:text-[50px] max-md:leading-7'>
+          <p className='font-primary max-xs:text-[40px] text-[64px] font-normal uppercase leading-[60px] text-white max-md:text-[50px] max-md:leading-7'>
             RADAR
           </p>
         </div>

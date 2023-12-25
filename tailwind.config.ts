@@ -26,6 +26,8 @@ export default {
       // },
       fontFamily: {
         primary: ['radar'],
+        syne: ['Syne'],
+        inter: ['Inter'],
       },
       container: {
         center: true,

@@ -7,8 +7,8 @@ export default function IconMenu() {
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
-      <g clip-path='url(#clip0_69_63)'>
-        <g clip-path='url(#clip1_69_63)'>
+      <g clipPath='url(#clip0_69_63)'>
+        <g clipPath='url(#clip1_69_63)'>
           <path
             d='M39 228.304V210.817L0 171.553V189.04L39 228.304Z'
             fill='#055B66'

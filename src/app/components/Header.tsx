@@ -50,7 +50,7 @@ export default function Header() {
           </div>
           <div className='mt-8 grid grid-cols-12 max-md:mt-4'>
             <div className='col-span-6 max-md:col-span-full'>
-              <p className='font-radar max-xs:text-[30px] text-[64px] font-normal uppercase leading-[60px] text-[#1E9CD7] max-lg:leading-none max-md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
+              <p className='font-primary max-xs:text-[30px] text-[64px] font-normal uppercase leading-[60px] text-[#1E9CD7] max-lg:leading-none max-md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
                 about
               </p>
               <p className='font-montserrat mt-5 text-[18px] font-medium text-white max-lg:mb-8 max-md:mb-4 max-md:text-[14px]'>
@@ -88,13 +88,15 @@ export default function Header() {
       </div>
       <div className='group-hover: container absolute left-1/2 z-10 w-full -translate-x-1/2 items-center pt-[33px]'>
         <div className='border-blue flex items-center justify-between rounded-[10px] border bg-[#0C334580] px-[50px] py-5 max-lg:px-[30px] max-md:px-[20px]'>
-          <div className='max-h-[33px] w-full max-w-[145px] md:max-w-[180px]'>
-            <img
-              src='/images/logo.png'
-              alt='wrapper hero'
-              className='h-full w-full object-cover'
-            />
-          </div>
+          <Link href='/'>
+            <div className='max-h-[33px] w-full max-w-[145px] md:max-w-[180px]'>
+              <img
+                src='/images/logo.png'
+                alt='wrapper hero'
+                className='h-full w-full object-cover'
+              />
+            </div>
+          </Link>
           <div className='flex items-center gap-5 max-lg:hidden'>
             <TwitterHeader />
             <DiscordHeader />

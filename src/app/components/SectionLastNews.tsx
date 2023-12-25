@@ -1,3 +1,5 @@
+import SliderNews from '@/app/components/SliderNews';
+
 import IconStar from '../components/Icon/Star';
 
 export default function SectionLastNews() {
@@ -8,10 +10,10 @@ export default function SectionLastNews() {
           <div className='relative col-span-7 border-r border-white md:col-span-9'>
             <div className='flex h-full items-center gap-2'>
               <div className='flex gap-2 max-md:block'>
-                <p className='font-radar text-[96px] font-normal uppercase text-[#1E9CD7] max-lg:text-[40px] max-md:text-[35px] max-sm:text-[22px] lg:text-[50px]'>
+                <p className='font-primary text-[96px] font-normal uppercase text-[#1E9CD7] max-2xl:text-[50px] max-xl:text-[50px] max-lg:text-[40px] max-md:text-[35px] max-sm:text-[22px]'>
                   NOTABLE
                 </p>
-                <p className='font-radar text-[96px] font-normal uppercase text-white max-lg:text-[40px] max-md:text-[35px] max-sm:text-[22px] lg:text-[50px] '>
+                <p className='font-primary text-[96px] font-normal uppercase text-white max-2xl:text-[50px] max-lg:text-[40px] max-md:text-[35px] max-sm:text-[22px] '>
                   POST
                 </p>
               </div>
@@ -36,20 +38,20 @@ export default function SectionLastNews() {
               enough to break boundaries in execution, and rich enough to
               connect with millions of people individually in the crypto world.
             </div>
-            <div className='absolute left-1/2 top-[-25px] -translate-x-1/2'>
+            <div className='absolute bottom-[-25px] left-1/2 -translate-x-1/2'>
               <IconStar />
             </div>
           </div>
           <div className='col-span-5 flex items-center md:col-span-3'>
-            <div className='h2 ml-auto mt-4 text-right font-extrabold text-white max-md:text-center md:mt-0'>
+            <div className='h2 font-primary ml-auto mt-4 text-right font-extrabold text-white max-md:text-center md:mt-0'>
               2023
             </div>
           </div>
         </div>
       </div>
-      {/* <div className='mt-[39px]	md:mt-[55px] xl:mt-[78px]'>
+      <div className='mt-[39px]	md:mt-[55px] xl:mt-[78px]'>
         <SliderNews />
-      </div> */}
+      </div>
     </section>
   );
 }

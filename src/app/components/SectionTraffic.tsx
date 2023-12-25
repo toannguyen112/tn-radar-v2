@@ -30,10 +30,10 @@ export default function SectionTraffic() {
   return (
     <section className='container'>
       <div className='max-lg:mt-8 max-lg:flex max-lg:gap-2 max-md:mt-4'>
-        <p className='font-radar max-xs:text-[24px] text-[64px] font-normal uppercase leading-[60px] text-white  max-lg:text-[45px] max-md:text-[30px] lg:hidden '>
+        <p className='font-primary max-xs:text-[24px] text-[64px] font-normal uppercase leading-[60px] text-white  max-lg:text-[45px] max-md:text-[30px] lg:hidden '>
           RADAR
         </p>
-        <p className='font-radar max-xs:text-[24px] text-[64px] font-normal uppercase leading-[60px] text-[#1E9CD7]  max-lg:text-[45px] max-md:text-[30px] '>
+        <p className='font-primary max-xs:text-[24px] text-[64px] font-normal uppercase leading-[60px] text-[#1E9CD7]  max-lg:text-[45px] max-md:text-[30px] '>
           TRAFFIC
         </p>
       </div>
@@ -53,7 +53,7 @@ export default function SectionTraffic() {
                   </p>
                 </div>
                 <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-                  <p className='font-radar mt-9 text-center text-[60px] font-semibold uppercase text-[#1E9CD7]'>
+                  <p className='font-primary mt-9 text-center text-[60px] font-semibold uppercase text-[#1E9CD7]'>
                     <CountUp start={0} end={val.content} duration={4} />K
                   </p>
                 </div>
@@ -97,7 +97,7 @@ export default function SectionTraffic() {
                       <p className='font-montserrat max-xs:text-[16px] text-left text-[24px]  font-semibold uppercase text-[#46ABDD]'>
                         {val.title}
                       </p>
-                      <p className='font-radar max-xs:text-[50px] mt-4 text-center text-[60px] font-semibold uppercase text-[#1E9CD7]'>
+                      <p className='font-primary max-xs:text-[50px] mt-4 text-center text-[60px] font-semibold uppercase text-[#1E9CD7]'>
                         {val.content}
                       </p>
                     </div>

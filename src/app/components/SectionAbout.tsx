@@ -65,7 +65,7 @@ const SectionAbout = () => {
 
   return (
     <section className='container '>
-      <div className='font-radar gradient-text max-xs:text-[30px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
+      <div className='font-primary gradient-text max-xs:text-[30px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
         <p>ABOUT</p>
       </div>
       <div className='grid grid-cols-12'>
@@ -107,7 +107,7 @@ const SectionAbout = () => {
           })}
         </div>
       </div>
-      <div className='font-radar gradient-text max-xs:text-[30px] mt-[31px] font-normal uppercase leading-[110%] max-md:mt-4 md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
+      <div className='font-primary gradient-text max-xs:text-[30px] mt-[31px] font-normal uppercase leading-[110%] max-md:mt-4 md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
         <p>ABOUT</p>
       </div>
       <div className='mt-[84px] grid grid-cols-3 gap-[25px] max-lg:mt-8 max-lg:hidden max-md:mt-4'>
