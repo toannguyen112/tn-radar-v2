@@ -37,7 +37,7 @@ function SliderNews() {
         const response = await fetch(
           'https://3.106.127.44.nip.io/api/posts-radar-v2s?populate=*',
           {
-            method: 'GET'
+            method: 'GET',
           }
         );
         const data = await response.json();
@@ -78,7 +78,7 @@ function SliderNews() {
           news.map((post, index) => {
             return (
               <SwiperSlide key={index}>
-                <div className='h-[350px] overflow-hidden rounded-xl border border-[#323232] bg-[#18181A] lg:h-[450px] xl:h-[600px] 2xl:h-[814px]'>
+                <div className='h-[350px] overflow-hidden rounded-xl border border-[#323232] bg-[#18181A] lg:h-[450px]  2xl:h-[679px]'>
                   <img
                     src={`https://3.106.127.44.nip.io${post?.attributes?.thumbnail?.data?.attributes?.url}`}
                     alt='image'

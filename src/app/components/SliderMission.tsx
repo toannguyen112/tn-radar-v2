@@ -93,7 +93,7 @@ export default function SliderMission() {
           RADAR
         </p>
         <p className='font-radar max-xs:text-[24px] text-[64px] font-normal uppercase leading-[60px] text-[#1E9CD7] max-lg:text-[45px] max-md:text-[30px]'>
-          MISSION
+          Network
         </p>
       </div>
       <div className=''>
