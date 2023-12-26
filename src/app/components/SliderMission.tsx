@@ -172,8 +172,8 @@ export default function SliderMission() {
                     alt='wrapper hero'
                     className='h-full w-full object-cover'
                   />
-                  <div className='absolute left-1/2 top-1/2  w-[120px] -translate-x-1/2 -translate-y-1/2'>
-                    <div className='aspect-w-1 aspect-h-1 overflow-hidden'>
+                  <div className='absolute left-1/2 top-1/2  -translate-x-1/2 -translate-y-1/2'>
+                    <div className='overflow-hidden '>
                       <img
                         src={
                           val?.attributes?.thumbnail?.data?.attributes?.url
@@ -181,20 +181,20 @@ export default function SliderMission() {
                             : '/images/is-10.png'
                         }
                         alt='wrapper hero'
-                        className='max-xs:w-[120px] max-xs:h-[100px] h-[120px] w-[120px] md:h-[100px] md:w-[100px]'
+                        className='max-h-[152px]'
                       />
                     </div>
                   </div>
                   <div className='absolute bottom-0 left-1/2 -translate-x-1/2 '>
                     <div className='relative h-8 w-full'>
                       <div className='absolute -bottom-full left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-5  '>
-                        <a href={val.x_link}>
+                        <a target='_blank' href={val.attributes.x_link}>
                           <TwitterHeader />
                         </a>
-                        <a href={val.discord_link}>
+                        <a target='_blank' href={val.attributes.discord_link}>
                           <DiscordHeader />
                         </a>
-                        <a href={val.telegram_link}>
+                        <a target='_blank' href={val.attributes.telegram_link}>
                           <TelegramHeader />
                         </a>
                       </div>
