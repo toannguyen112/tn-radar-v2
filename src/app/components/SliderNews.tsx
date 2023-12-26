@@ -34,7 +34,10 @@ function SliderNews() {
     async function fetchData() {
       try {
         const response = await fetch(
-          'https://3.106.127.44.nip.io/api/posts-radar-v2s?populate=*&filters[isFeatured][$eq]=true&pagination[page]=1&pagination[pageSize]=4', { method: 'GET' }
+          'https://3.106.127.44.nip.io/api/posts-radar-v2s?populate=*',
+          {
+            method: 'GET',
+          }
         );
         const data = await response.json();
         const arr: News[] = [];
