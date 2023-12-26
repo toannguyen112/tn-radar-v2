@@ -127,8 +127,8 @@ export default function SliderMission() {
         <p className='font-primary max-xs:text-[24px] text-[64px] font-normal uppercase leading-[60px] text-white max-lg:text-[45px] max-md:text-[30px]'>
           RADAR
         </p>
-        <p className='font-primary max-xs:text-[24px] text-[64px] font-normal uppercase leading-[60px] text-[#1E9CD7] max-lg:text-[45px] max-md:text-[30px]'>
-          MISSION
+        <p className='uppercase font-primary max-xs:text-[24px] text-[64px] font-normal  leading-[60px] text-[#1E9CD7] max-lg:text-[45px] max-md:text-[30px]'>
+          Network
         </p>
       </div>
       <div className=''>

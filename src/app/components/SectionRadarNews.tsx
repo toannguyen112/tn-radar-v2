@@ -73,6 +73,7 @@ export default function SectionRadarNews() {
           </div>
           <div className='mb-[20px] flex h-[69px]  items-center justify-between rounded-lg border border-[#737373] px-5 py-[15px] duration-200 hover:bg-[#005B97] max-lg:h-[50px]'>
             <a
+              target='_blank'
               href={tablePosts[tablePosts.length - 1]?.attributes?.link}
               className='font-montserrat font-semibold uppercase leading-none text-white max-lg:text-[20px] max-md:leading-7 lg:text-[24px] xl:text-[32px]'
             >
