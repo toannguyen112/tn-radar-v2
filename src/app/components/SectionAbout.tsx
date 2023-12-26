@@ -65,7 +65,7 @@ const SectionAbout = () => {
 
   return (
     <section className='container '>
-      <div className='font-radar gradient-text max-xs:text-[30px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
+      <div className='font-primary gradient-text max-xs:text-[30px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
         <p>ABOUT</p>
       </div>
       <div className='mt-[51px] grid grid-cols-12 max-lg:mt-8 max-md:mt-4 md:gap-x-[32px]'>
@@ -91,7 +91,7 @@ const SectionAbout = () => {
                   onClick={() => handleItemClick(index)}
                 >
                   <p className='font-montserrat text-[32px] font-medium capitalize text-white max-lg:text-[20px] max-md:text-[14px]'>
-                    {val.title}
+                    {index + 1 + '. ' + val.title}
                   </p>
                   <div
                     className={`cursor-pointer ${
@@ -116,7 +116,7 @@ const SectionAbout = () => {
           })}
         </div>
       </div>
-      <div className='font-radar gradient-text max-xs:text-[30px] mt-[31px] font-normal uppercase leading-[110%] max-md:mt-4 md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
+      <div className='font-primary gradient-text max-xs:text-[30px] mt-[31px] font-normal uppercase leading-[110%] max-md:mt-4 md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
         <p>ABOUT</p>
       </div>
       <div className='mt-[84px] grid grid-cols-3 gap-[25px] max-lg:mt-8 max-lg:hidden max-md:mt-4'>

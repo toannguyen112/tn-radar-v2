@@ -14,8 +14,9 @@ declare module 'swiper/react' {
   }
 }
 
-interface Post {
+interface News {
   attributes: {
+    isNew: boolean;
     thumbnail: {
       data: {
         attributes: {
@@ -28,9 +29,7 @@ interface Post {
 
 // import required modules
 function SliderNews() {
-  const [news, setLastNews] = useState<Post[]>([]);
-
-  // const token = process.env.NEXT_API_URL;
+  const [news, setLastNews] = useState<News[]>([]);
   useEffect(() => {
     async function fetchData() {
       try {
@@ -41,8 +40,13 @@ function SliderNews() {
           }
         );
         const data = await response.json();
-        console.log(data);
-        setLastNews(data.data);
+        const arr: News[] = [];
+        if (data?.data.length > 0) {
+          data?.data.map((val: News) => {
+            val.attributes.isNew ? arr.push(val) : console.log('');
+          });
+        }
+        setLastNews(arr);
       } catch (error) {
         console.error('Error fetching data:', error);
         setLastNews([]); // Set 'powers' to an empty array in case of an error
@@ -51,9 +55,9 @@ function SliderNews() {
     fetchData();
   }, []);
   return (
-    <div className='blur-slider md:translate-x-[48px] lg:translate-x-[64px] xl:translate-x-[81px]'>
+    <div className='blur-slider '>
       <Swiper
-        slidesPerView={1.6}
+        slidesPerView={3}
         spaceBetween={30}
         centeredSlides={true}
         speed={1000}
@@ -78,11 +82,11 @@ function SliderNews() {
           news.map((post, index) => {
             return (
               <SwiperSlide key={index}>
-                <div className='h-[350px] overflow-hidden rounded-xl border border-[#323232] bg-[#18181A] lg:h-[450px]  2xl:h-[679px]'>
+                <div className='h-[350px] overflow-hidden rounded-xl border border-[#323232] bg-[#18181A] lg:h-[450px] xl:h-[600px] 2xl:h-[814px]'>
                   <img
                     src={`https://3.106.127.44.nip.io${post?.attributes?.thumbnail?.data?.attributes?.url}`}
                     alt='image'
-                    className='slider-image-content'
+                    className='slider-image-content aspect-auto h-full w-full'
                   />
                 </div>
               </SwiperSlide>

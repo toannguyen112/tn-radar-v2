@@ -5,7 +5,7 @@ import SliderMission from '@/app/components/SliderMission';
 export default function SectionMission() {
   return (
     <div className='container mt-[126px] max-lg:mt-8 max-md:mt-4'>
-      <p className='font-radar max-xs:text-[40px] text-[64px] font-normal uppercase leading-[60px] text-[#1E9CD7] max-md:text-[50px]'>
+      <p className='font-primary max-xs:text-[40px] text-[64px] font-normal uppercase leading-[60px] text-[#1E9CD7] max-md:text-[50px]'>
         Mission
       </p>
       <div className='mt-[84px] grid grid-cols-12 items-center max-lg:mt-8 max-md:mt-4'>
