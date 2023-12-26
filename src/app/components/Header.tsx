@@ -13,9 +13,8 @@ export default function Header() {
     <div className=''>
       <div
         onMouseLeave={() => setIsHovered(false)}
-        className={`absolute left-0 top-0 z-20 w-full transform rounded-2xl border border-[#0B090C] bg-[#0B090C]  pb-10 transition-transform duration-200 max-xl:pb-6 max-md:pb-4 ${
-          isHovered ? 'block translate-y-0' : 'hidden -translate-y-full'
-        }`}
+        className={`absolute left-0 top-0 z-20 w-full transform rounded-2xl border border-[#0B090C] bg-[#0B090C]  pb-10 transition-transform duration-200 max-xl:pb-6 max-md:pb-4 ${isHovered ? 'block translate-y-0' : 'hidden -translate-y-full'
+          }`}
       >
         <div className='container pt-5'>
           <div className='flex items-center justify-between'>
@@ -50,14 +49,15 @@ export default function Header() {
           </div>
           <div className='mt-[181px] grid grid-cols-12 max-xl:mt-[40px] max-lg:mt-8 max-md:mt-4'>
             <div className='col-span-10 col-start-2 grid grid-cols-12'>
-              <div className='col-span-6 max-md:col-span-full'>
+              <div className='col-span-6 max-md:col-span-full space-y-[20px]'>
                 <p className='font-primary max-xs:text-[30px] text-[64px] font-normal uppercase leading-[60px] text-[#1E9CD7] max-lg:leading-none max-md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
                   about
                 </p>
                 <p className='font-montserrat mt-5 text-[18px] font-medium text-white max-lg:mb-8 max-md:mb-4 max-md:text-[14px]'>
                   We strive to deliver accurate, timely, and easily
                   understandable information about the ever-evolving landscape
-                  of decentralized finance. Recognizing the immense potential
+                  of decentralized finance. <br />
+                  <br />Recognizing the immense potential
                   and transformative power of blockchain technology, we are
                   dedicated to ensuring that this potential reaches the widest
                   possible audience.
