@@ -34,7 +34,7 @@ function SliderNews() {
     async function fetchData() {
       try {
         const response = await fetch(
-          'https://3.106.127.44.nip.io/api/posts-radar-v2s?populate=*',
+          'https://3.106.127.44.nip.io/api/posts-radar-v2s?populate=*&filters[isNew][$eq]=true&sort[0]=id:asc',
           {
             method: 'GET',
           }
