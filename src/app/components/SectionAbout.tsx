@@ -85,24 +85,22 @@ const SectionAbout = () => {
               <>
                 <div
                   key={index}
-                  className={`flex h-[70px] w-full items-center justify-between rounded-xl border border-[#737373] px-[30px] py-[15px] transition-all duration-200 ${
-                    isSelected ? 'bg-[#005B97] duration-200' : 'duration-200'
-                  }`}
+                  className={`flex h-[70px] w-full items-center justify-between rounded-xl border border-[#737373] px-[30px] py-[15px] transition-all duration-200 ${isSelected ? 'bg-[#005B97] duration-200' : 'duration-200'
+                    }`}
                   onClick={() => handleItemClick(index)}
                 >
                   <p className='font-montserrat text-[32px] font-medium capitalize text-white max-lg:text-[20px] max-md:text-[14px]'>
                     {index + 1 + '. ' + val.title}
                   </p>
                   <div
-                    className={`cursor-pointer ${
-                      isSelected ? 'rotate-[90deg] duration-200' : ''
-                    }`}
+                    className={`cursor-pointer ${isSelected ? 'rotate-[90deg] duration-200' : ''
+                      }`}
                   >
                     <More />
                   </div>
                 </div>
                 {isSelected && (
-                  <div className='mt-2  grid grid-cols-12 items-center justify-between text-white transition-all duration-200'>
+                  <div className='mt-2  grid grid-cols-12 items-center justify-between text-white transition-all duration-200 font-montserrat'>
                     <p className='col-span-5 max-md:col-span-full'>
                       {val.title}
                     </p>
