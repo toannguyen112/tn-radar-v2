@@ -4,7 +4,7 @@ import IconStar from '../components/Icon/Star';
 
 export default function SectionLastNews() {
   return (
-    <section className='container relative overflow-hidden  pt-[141px] max-lg:pt-[32px] max-md:pt-[16px]'>
+    <section className='container relative overflow-hidden  pt-[80px] max-lg:pt-[32px] max-md:pt-[16px]'>
       <div className=''>
         <div className='max-xs:px-0 grid h-[125px] grid-cols-12 border-b border-t border-white px-[30px] max-md:px-[10px] max-sm:px-0'>
           <div className='relative col-span-7 border-r border-white md:col-span-9'>

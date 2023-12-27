@@ -127,7 +127,7 @@ export default function SliderMission() {
         <p className='font-primary max-xs:text-[24px] text-[64px] font-normal uppercase leading-[60px] text-white max-lg:text-[45px] max-md:text-[30px]'>
           RADAR
         </p>
-        <p className='uppercase font-primary max-xs:text-[24px] text-[64px] font-normal  leading-[60px] text-[#1E9CD7] max-lg:text-[45px] max-md:text-[30px]'>
+        <p className='font-primary max-xs:text-[24px] text-[64px] font-normal uppercase  leading-[60px] text-[#1E9CD7] max-lg:text-[45px] max-md:text-[30px]'>
           Network
         </p>
       </div>
@@ -164,7 +164,7 @@ export default function SliderMission() {
                 <div className='xxs:h-[170px] xs:h-[230px] relative md:h-[205px] lg:h-[174px] xl:h-[247px] 2xl:h-[247px]'>
                   <div className='absolute right-[43px] top-[14px] max-md:right-[20px] max-md:top-[5px]'>
                     <p className='font-primary text-[24px] capitalize text-white max-md:text-[18px]'>
-                      {val.index}
+                      {'00' + (index + 1)}
                     </p>
                   </div>
                   <img
