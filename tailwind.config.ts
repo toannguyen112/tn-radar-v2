@@ -23,6 +23,7 @@ export default {
         primary: ['radar'],
         montserrat: ['Montserrat'],
         Khyay: ['Khyay'],
+        syne: ['syne']
       },
       container: {
         center: true,

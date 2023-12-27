@@ -67,7 +67,7 @@ export default function SectionRadarNews() {
               ).format('DD/MM/YYYY')}
           </div>
           <div className='my-[20px]  font-semibold uppercase text-white max-lg:h-fit'>
-            <p className='font-semibold uppercase leading-none text-white max-lg:text-[20px] max-md:leading-7 lg:text-[24px] xl:text-[32px]'>
+            <p className='font-semibold uppercase leading-none text-white max-lg:text-[20px] max-md:leading-7 lg:text-[24px] xl:text-[32px] font-montserrat'>
               {tablePosts[tablePosts.length - 1]?.attributes?.title}
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function SectionRadarNews() {
             <a
               target='_blank'
               href={tablePosts[tablePosts.length - 1]?.attributes?.link}
-              className='font-montserrat font-semibold uppercase leading-none text-white max-lg:text-[20px] max-md:leading-7 lg:text-[24px] xl:text-[32px]'
+              className='font-montserrat font-semibold uppercase leading-none text-white max-lg:text-[20px] max-md:leading-7 lg:text-[24px] xl:text-[32px] '
             >
               Read More
             </a>
