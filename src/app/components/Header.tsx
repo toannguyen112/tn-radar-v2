@@ -14,9 +14,8 @@ export default function Header() {
     <div className='relative'>
       <div
         onMouseLeave={() => setIsHovered(false)}
-        className={`duration-400 absolute left-0 top-0 z-20 w-full transform rounded-2xl border border-[#0B090C] bg-[#0B090C] pb-10 transition-transform max-xl:pb-6 max-md:pb-4 ${
-          isHovered ? ' translate-y-0' : ' -translate-y-full'
-        }`}
+        className={`duration-400 absolute left-0 top-0 z-20 w-full transform rounded-2xl border border-[#0B090C] bg-[#0B090C] pb-10 transition-transform max-xl:pb-6 max-md:pb-4 ${isHovered ? ' translate-y-0' : ' -translate-y-full'
+          }`}
       >
         <div className='container pt-5'>
           <div className='flex items-center justify-between'>
@@ -92,9 +91,8 @@ export default function Header() {
         </div>
       </div>
       <div
-        className={`absolute left-1/2 z-10 w-full -translate-x-1/2 items-center pt-[33px] group-hover:container ${
-          isHovered ? 'slide-down-enter slide-down-enter-active' : ''
-        }`}
+        className={`absolute left-1/2 z-10 w-full -translate-x-1/2 items-center pt-[33px] container ${isHovered ? 'slide-down-enter slide-down-enter-active' : ''
+          }`}
       >
         <div className='border-blue flex items-center justify-between rounded-[10px] border bg-[#0C334580] px-[50px] py-5 max-lg:px-[30px] max-md:px-[20px]'>
           <Link href='/'>
