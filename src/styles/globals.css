@@ -160,7 +160,7 @@
   @apply text-[1.5rem] leading-[120%] md:text-[2rem] xl:text-[3rem] 2xl:text-[3.75rem]; /*60px*/
 }
 .title-1 {
-  @apply text-[0.875rem] leading-[158%] md:text-[1rem] xl:text-[1.5rem]; /*24px*/
+  @apply text-[0.875rem] leading-[158%] md:text-[1rem] 2xl:text-[1.5rem]; /*24px*/
 }
 @layer utilities {
   .animated-underline {

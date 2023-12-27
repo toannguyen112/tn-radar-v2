@@ -33,7 +33,7 @@ export default function SectionLastNews() {
         </div>
         <div className='grid grid-cols-12 border-b px-[30px] max-md:px-[10px] max-sm:px-0'>
           <div className='relative  col-span-7 border-r border-white md:col-span-9'>
-            <div className='title-1 ml-auto max-w-[1172px] pb-[25px] pr-[10px] pt-[18px]	text-white md:pr-[35px] md:pt-[25px] md:text-right xl:pr-[50px] xl:pt-[36px] font-montserrat'>
+            <div className='title-1  pb-[25px] pr-[10px] pt-[18px]	text-white md:pr-[35px] md:pt-[25px] md:text-right xl:pr-[50px] xl:pt-[36px] font-montserrat'>
               We build concepts that are big enough to exist everywhere, brave
               enough to break boundaries in execution, and rich enough to
               connect with millions of people individually in the crypto world.
