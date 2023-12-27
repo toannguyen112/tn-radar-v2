@@ -19,7 +19,7 @@ export default function Header() {
       >
         <div className='container pt-5'>
           <div className='flex items-center justify-between'>
-            <div className='w-full max-w-[70px] md:max-w-[180px] 2xl:max-w-[312px]'>
+            <div className='max-h-[33px] w-full max-w-[145px] md:max-w-[180px]'>
               <img
                 src='/images/logo.png'
                 alt='wrapper hero'
