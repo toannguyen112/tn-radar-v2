@@ -17,6 +17,7 @@ declare module 'swiper/react' {
 interface News {
   attributes: {
     isNew: boolean;
+    link: string;
     thumbnail: {
       data: {
         attributes: {
@@ -82,13 +83,15 @@ function SliderNews() {
           news.map((post, index) => {
             return (
               <SwiperSlide key={index}>
-                <div className='h-[350px] overflow-hidden rounded-xl border border-[#323232] bg-[#18181A] lg:h-[450px] xl:h-[600px] 2xl:h-[814px]'>
-                  <img
-                    src={`https://3.106.127.44.nip.io${post?.attributes?.thumbnail?.data?.attributes?.url}`}
-                    alt='image'
-                    className='slider-image-content aspect-auto h-full w-full'
-                  />
-                </div>
+                <a href={post?.attributes?.link}>
+                  <div className='h-[350px] overflow-hidden rounded-xl border border-[#323232] bg-[#18181A] lg:h-[450px] xl:h-[600px] 2xl:h-[814px]'>
+                    <img
+                      src={`https://3.106.127.44.nip.io${post?.attributes?.thumbnail?.data?.attributes?.url}`}
+                      alt='image'
+                      className='slider-image-content aspect-auto h-full w-full'
+                    />
+                  </div>
+                </a>
               </SwiperSlide>
             );
           })}
