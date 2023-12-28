@@ -25,7 +25,7 @@ export default function SectionRadarNews() {
     async function fetchData() {
       try {
         const response = await fetch(
-          'https://3.106.127.44.nip.io/api/posts-radar-v2s?populate=*&filters[isFeatured][$eq]=true&pagination[page]=1&pagination[pageSize]=4&sort[0]=id:asc',
+          'https://3.106.127.44.nip.io/api/posts-radar-v2s?populate=*&filters[isNew][$eq]=true&filters[isFeatured][$eq]=true&pagination[page]=1&pagination[pageSize]=4&sort[0]=id:asc',
           {
             method: 'GET',
           }
