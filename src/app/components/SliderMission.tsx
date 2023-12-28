@@ -107,7 +107,7 @@ export default function SliderMission() {
     async function fetchData() {
       try {
         const response = await fetch(
-          'https://3.106.127.44.nip.io/api/coin-radar-v2s?populate=*&sort[0]=id:desc',
+          'https://3.106.127.44.nip.io/api/coin-radar-v2s?populate=*&sort[0]=id:asc',
           {
             method: 'GET',
           }
