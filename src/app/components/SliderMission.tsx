@@ -201,7 +201,9 @@ export default function SliderMission() {
                     </div>
                   </div>
                   <div className='mt-[38px]'>
-                    <p className='font-Khyay text-xs text-white'>{val.title}</p>
+                    <p className='font-Khyay text-xs text-white'>
+                      {val.attributes.description}
+                    </p>
                   </div>
                 </div>
               </SwiperSlide>
