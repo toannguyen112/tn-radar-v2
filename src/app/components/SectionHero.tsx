@@ -1,3 +1,4 @@
+import FlickerText from '@/app/components/FlickerText';
 import Header from '@/app/components/Header';
 import BackgroundSection from '@/app/components/Icon/BackgroundSection';
 
@@ -15,8 +16,9 @@ export default function SectionHero() {
       </video>
       <div className='container h-full '>
         <div className='relative h-full'>
-          <div className='font-primary gradient-text max-xs:text-[30px] absolute left-0	top-[230px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
-            <p>Unravels </p> <p>DeFi's Signals</p>
+          <div className='font-primary gradient-text xxs:text-[30px] absolute left-0	top-[230px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
+            <FlickerText text='Unravels' />
+            <FlickerText text="DeFi's Signals" />
           </div>
         </div>
       </div>

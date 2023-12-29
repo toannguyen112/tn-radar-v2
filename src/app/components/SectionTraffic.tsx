@@ -1,5 +1,7 @@
 // Import Swiper styles
+import { useState } from 'react';
 import CountUp from 'react-countup';
+import { Waypoint } from 'react-waypoint';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 declare module 'swiper/react' {
@@ -15,7 +17,7 @@ declare module 'swiper/react' {
 const arrayTraffic = [
   {
     title: 'follower twitter',
-    content: 2,
+    content: 10,
   },
   {
     title: 'Monthly transaction',
@@ -27,6 +29,12 @@ const arrayTraffic = [
   },
 ];
 export default function SectionTraffic() {
+  const [countUpVisible, setCountUpVisible] = useState(false);
+
+  const handleOneEnter = () => {
+    setCountUpVisible(true);
+  };
+
   return (
     <section className='container'>
       <div className='max-lg:mt-8 max-lg:flex max-lg:gap-2 max-md:mt-4'>
@@ -53,9 +61,13 @@ export default function SectionTraffic() {
                   </p>
                 </div>
                 <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
-                  <p className='font-primary mt-9 text-center text-[60px] font-semibold uppercase text-[#1E9CD7]'>
-                    <CountUp start={0} end={val.content} duration={4} />K
-                  </p>
+                  <Waypoint onEnter={handleOneEnter} />
+                  {countUpVisible && (
+                    <p className='font-primary max-xs:text-[50px] mt-4 text-center text-[60px] font-semibold uppercase text-[#1E9CD7]'>
+                      <CountUp start={0} end={val.content} duration={4} />
+                      K+
+                    </p>
+                  )}
                 </div>
               </div>
             );
@@ -98,7 +110,7 @@ export default function SectionTraffic() {
                         {val.title}
                       </p>
                       <p className='font-primary max-xs:text-[50px] mt-4 text-center text-[60px] font-semibold uppercase text-[#1E9CD7]'>
-                        {val.content}
+                        {val.content}K+
                       </p>
                     </div>
                   </div>
