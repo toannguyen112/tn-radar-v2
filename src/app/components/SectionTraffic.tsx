@@ -63,7 +63,7 @@ export default function SectionTraffic() {
                 <div className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
                   <Waypoint onEnter={handleOneEnter} />
                   {countUpVisible && (
-                    <p className='font-primary max-xs:text-[50px] mt-4 text-center text-[60px] font-semibold uppercase text-[#1E9CD7]'>
+                    <p className='font-primary max-xs:text-[50px] mt-4 text-center text-[60px] font-semibold uppercase text-[#1E9CD7] 2xl:text-[84px]'>
                       <CountUp start={0} end={val.content} duration={4} />
                       K+
                     </p>

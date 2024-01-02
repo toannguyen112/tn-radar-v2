@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
@@ -83,7 +84,15 @@ declare module 'swiper/react' {
     breakpoints?: any;
     centeredSlides?: boolean;
     speed?: number;
+    modules?: any;
+    freeMode?: any;
+    freeModeMomentumRatio?: any;
     loop?: boolean;
+    autoplay?: {
+      delay: number;
+      disableOnInteraction: boolean;
+      pauseOnMouseEnter: boolean;
+    };
   }
 }
 interface Coin {
@@ -103,6 +112,7 @@ interface Coin {
 }
 export default function SliderMission() {
   const [coin, setCoin] = useState<Coin[]>([]);
+  const swiperRef = useRef<any>(null);
   useEffect(() => {
     async function fetchData() {
       try {
@@ -121,6 +131,11 @@ export default function SliderMission() {
     }
     fetchData();
   }, []);
+  // useEffect(() => {
+  //   if (swiperRef.current) {
+  //     swiperRef.current.autoplay.start();
+  //   }
+  // }, [coin]);
   return (
     <div className='mt-[105px] max-lg:mt-8 max-md:mt-4'>
       <div className='xs:mb-[32px] mb-[74px] max-lg:flex max-lg:gap-2 max-md:mb-4'>
@@ -133,11 +148,19 @@ export default function SliderMission() {
       </div>
       <div className=''>
         <Swiper
+          ref={(swiper) => (swiperRef.current = swiper)}
           slidesPerView={1}
           spaceBetween={30}
           centeredSlides={false}
-          speed={1000}
+          modules={[Autoplay]}
           loop={true}
+          speed={12000}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          // freeMode={true}
           breakpoints={{
             768: {
               slidesPerView: 2,
@@ -160,7 +183,11 @@ export default function SliderMission() {
         >
           {coin.map((val: any, index: any) => {
             return (
-              <SwiperSlide key={index}>
+              <SwiperSlide
+                key={index}
+                onMouseEnter={() => swiperRef.current?.autoplay.stop()}
+                onMouseLeave={() => swiperRef.current?.autoplay.start()}
+              >
                 <div className='xxs:h-[170px] xs:h-[230px] relative md:h-[205px] lg:h-[174px] xl:h-[247px] 2xl:h-[247px]'>
                   <div className='absolute right-[43px] top-[14px] max-md:right-[20px] max-md:top-[5px]'>
                     <p className='font-primary text-[24px] capitalize text-white max-md:text-[18px]'>
