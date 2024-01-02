@@ -31,13 +31,8 @@ export default function SectionRadarNews() {
           }
         );
         const data = await response.json();
-        const arr: TablePost[] = [];
-        if (data?.data.length > 0) {
-          data?.data.map((val: TablePost) => {
-            val.attributes.isNoTablePost ? arr.push(val) : console.log('');
-          });
-        }
-        setTablePosts(arr);
+
+        setTablePosts(data.data);
       } catch (error) {
         console.error('Error fetching data:', error);
         setTablePosts([]);
@@ -63,11 +58,11 @@ export default function SectionRadarNews() {
             {tablePosts[tablePosts.length - 1]?.attributes?.date
               ? tablePosts[tablePosts.length - 1]?.attributes?.date
               : moment(
-                tablePosts[tablePosts.length - 1]?.attributes?.createdAt
-              ).format('DD/MM/YYYY')}
+                  tablePosts[tablePosts.length - 1]?.attributes?.createdAt
+                ).format('DD/MM/YYYY')}
           </div>
           <div className='my-[20px]  font-semibold uppercase text-white max-lg:h-fit'>
-            <p className='font-semibold uppercase leading-none text-white max-lg:text-[20px] max-md:leading-7 lg:text-[24px] xl:text-[32px] font-montserrat'>
+            <p className='font-montserrat font-semibold uppercase leading-none text-white max-lg:text-[20px] max-md:leading-7 lg:text-[24px] xl:text-[32px]'>
               {tablePosts[tablePosts.length - 1]?.attributes?.title}
             </p>
           </div>
@@ -83,11 +78,12 @@ export default function SectionRadarNews() {
           </div>
           <div className='h-[650px] w-full overflow-hidden rounded-lg bg-[#D9D9D9] max-lg:h-[300px] max-md:h-[180px]'>
             <img
-              src={`https://3.106.127.44.nip.io${tablePosts[tablePosts.length - 1]?.attributes?.thumbnail?.data
-                ?.attributes?.url
-                }`}
+              src={`https://3.106.127.44.nip.io${
+                tablePosts[tablePosts.length - 1]?.attributes?.thumbnail?.data
+                  ?.attributes?.url
+              }`}
               alt='image'
-              className='slider-image-content  h-full w-full bg-center bg-cover'
+              className='slider-image-content  h-full w-full bg-cover bg-center'
             />
           </div>
         </div>
@@ -95,9 +91,10 @@ export default function SectionRadarNews() {
           <div className='rounded-2xl bg-[#181818] p-[30px]'>
             <div className='h-[180px]  overflow-hidden rounded-lg bg-[#D9D9D9]'>
               <img
-                src={`https://3.106.127.44.nip.io${tablePosts[tablePosts.length - 2]?.attributes?.thumbnail?.data
-                  ?.attributes?.url
-                  }`}
+                src={`https://3.106.127.44.nip.io${
+                  tablePosts[tablePosts.length - 2]?.attributes?.thumbnail?.data
+                    ?.attributes?.url
+                }`}
                 alt='image'
                 className='slider-image-content aspect-square h-full w-full'
               />
@@ -106,8 +103,8 @@ export default function SectionRadarNews() {
               {tablePosts[tablePosts.length - 2]?.attributes?.date
                 ? tablePosts[tablePosts.length - 2]?.attributes?.date
                 : moment(
-                  tablePosts[tablePosts.length - 2]?.attributes?.createdAt
-                ).format('DD/MM/YYYY')}
+                    tablePosts[tablePosts.length - 2]?.attributes?.createdAt
+                  ).format('DD/MM/YYYY')}
             </div>
             <div className='my-[20px]  font-semibold uppercase text-white max-lg:h-fit'>
               <p className='font-montserrat font-semibold uppercase leading-none text-white max-lg:text-[20px] max-md:leading-7 lg:text-[24px] xl:text-[32px]'>
@@ -146,8 +143,8 @@ export default function SectionRadarNews() {
                       {val?.attributes?.date
                         ? val?.attributes?.date
                         : moment(val?.attributes?.createdAt).format(
-                          'DD/MM/YYYY'
-                        )}
+                            'DD/MM/YYYY'
+                          )}
                     </div>
                     <div className='my-[20px] font-semibold uppercase text-white max-lg:h-fit'>
                       <p className='font-montserrat font-semibold uppercase leading-none text-white max-lg:text-[20px] max-md:leading-7 lg:text-[24px] xl:text-[32px]'>
