@@ -40,14 +40,9 @@ function SliderNews() {
             method: 'GET',
           }
         );
+
         const data = await response.json();
-        const arr: News[] = [];
-        if (data?.data.length > 0) {
-          data?.data.map((val: News) => {
-            val.attributes.isNew ? arr.push(val) : console.log('');
-          });
-        }
-        setLastNews(arr);
+        setLastNews(data.data);
       } catch (error) {
         console.error('Error fetching data:', error);
         setLastNews([]); // Set 'powers' to an empty array in case of an error
