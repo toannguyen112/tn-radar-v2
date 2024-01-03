@@ -1,5 +1,4 @@
 'use client';
-
 import React from 'react';
 
 import Footer from '@/app/components/Footer';
@@ -8,8 +7,10 @@ import SectionLastNews from '@/app/components/SectionLastNews';
 import SectionMission from '@/app/components/SectionMission';
 import SectionRadarNews from '@/app/components/SectionRadarNews';
 import SectionTraffic from '@/app/components/SectionTraffic';
+import { NoSSR } from '@/components/NoSSR';
 
 const HomePage = () => {
+
   return (
     <main className='bg-[#0B090C] '>
       <SectionHero />

@@ -1,6 +1,9 @@
+"use client";
 import Header from '@/app/components/Header'
 import BackgroundSection from '@/app/components/Icon/BackgroundSection'
-import React from 'react'
+import CardNotable from '@/components/CardNotable';
+import React, { useRef } from 'react';
+// Import Swiper React components
 
 function NotablePage() {
   return (
@@ -31,13 +34,24 @@ function NotablePage() {
         </div>
       </section>
       <section className='container' >
-        <div className='grid grid-cols-2 pt-[74px] pb-[47px]' >
-          <div className="col-span-2">
-            <div className='pb-[35px]'>
-              <div></div>
+        <div className='grid grid-cols-12  pb-[47px]' >
+          <div className="col-span-full md:col-span-3 border-r border-[#1E9CD7] md:pr-[79px]">
+            <div className='py-[35px] border-b border-[#0C3345]'>
+              <div>
+                <img src="/svg/coin/base.svg" alt="" />
+              </div>
+            </div>
+            <div className='py-[35px] border-b border-[#0C3345]'>
+              <div>
+                <img src="/svg/coin/base.svg" alt="" />
+              </div>
             </div>
           </div>
-          <div className="col-span-10"></div>
+          <div className="col-span-full md:col-span-9 md:pl-[75px] space-y-[52px]">
+            <CardNotable />
+            <CardNotable />
+            <CardNotable />
+          </div>
         </div>
       </section>
     </main>

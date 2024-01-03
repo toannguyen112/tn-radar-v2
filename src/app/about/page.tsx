@@ -1,3 +1,4 @@
+"use client"
 import SectionAbout from '@/app/components/SectionAbout';
 import SectionHeroAbout from '@/app/components/SectionHeroAbout';
 

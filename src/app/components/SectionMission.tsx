@@ -1,39 +1,46 @@
+"use client"
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Splitting from 'splitting';
 
 import IconMenu from '@/app/components/Icon/IconMenu';
-gsap.registerPlugin(ScrollTrigger);
 
 export default function SectionMission() {
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const [hasRendered, setHasRendered] = useState(false);
+  useEffect(() => {
+    setHasRendered(true);
+  }, []);
+
+
   const textRef: any = useRef(null);
   const playerRef: any = useRef(null);
   useEffect(() => {
-    if (textRef && textRef.current) {
-      const results = Splitting({ target: textRef.current, by: 'words' });
-      const words = textRef.current.querySelectorAll('.word');
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: playerRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 3,
-        },
-      });
+    // const results = Splitting({ target: textRef.current, by: 'words' });
+    // const words = textRef.current.querySelectorAll('.word');
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: playerRef.current,
+    //     start: 'top top',
+    //     end: 'bottom top',
+    //     scrub: 3,
+    //   },
+    // });
 
-      words.forEach((word: HTMLElement, index: number) => {
-        tl.fromTo(
-          word,
-          { opacity: 0.5 },
-          {
-            opacity: 1,
-            // duration: 10,
-            // ease: "power4.out",
-          }
-        );
-      });
-    }
+    // words.forEach((word: HTMLElement, index: number) => {
+    //   tl.fromTo(
+    //     word,
+    //     { opacity: 0.5 },
+    //     {
+    //       opacity: 1,
+    //       // duration: 10,
+    //       // ease: "power4.out",
+    //     }
+    //   );
+    // });
   }, [textRef]);
   return (
     <div
