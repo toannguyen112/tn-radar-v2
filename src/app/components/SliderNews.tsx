@@ -78,13 +78,16 @@ function SliderNews() {
           news.map((post, index) => {
             return (
               <SwiperSlide key={index}>
-                <a href={post?.attributes?.link}>
-                  <div className='h-[350px] overflow-hidden rounded-xl border border-[#323232] bg-[#18181A] lg:h-[450px] xl:h-[600px] 2xl:h-[814px]'>
+                <a href={post?.attributes?.link} className='space-y-[15px]'>
+                  <div className='overflow-hidden rounded-xl border border-[#323232] bg-[#18181A] aspect-w-5 aspect-h-3 max-h-[325px]'>
                     <img
                       src={`https://3.106.127.44.nip.io${post?.attributes?.thumbnail?.data?.attributes?.url}`}
                       alt='image'
-                      className='slider-image-content aspect-auto h-full w-full'
+                      className='slider-image-content  h-full w-full  object-contain'
                     />
+                  </div>
+                  <div className='font-montserrat text-[32px] text-white font-bold' >
+                    Optimis Goes# Supperchain
                   </div>
                 </a>
               </SwiperSlide>

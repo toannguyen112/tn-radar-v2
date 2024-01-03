@@ -1,6 +1,7 @@
 import SliderNews from '@/app/components/SliderNews';
 
 import IconStar from '../components/Icon/Star';
+import Link from 'next/link';
 
 export default function SectionLastNews() {
   return (
@@ -27,7 +28,9 @@ export default function SectionLastNews() {
           </div>
           <div className='col-span-5 flex items-center md:col-span-3'>
             <div className='title-1 bg-blue lg:hover:text-blue ml-auto flex h-[40px] w-[120px] cursor-pointer items-center justify-center rounded-[30px] px-[8px] py-[5px] font-semibold text-white duration-300 ease-in-out md:px-[11px] md:py-[7px] lg:hover:bg-white xl:h-[48px] xl:w-[152px] xl:px-[16px] xl:py-[10px] 2xl:h-[63px]'>
-              See All
+              <Link href='/notable' className=''  >
+                See All
+              </Link>
             </div>
           </div>
         </div>
