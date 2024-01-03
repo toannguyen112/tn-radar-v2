@@ -1,11 +1,34 @@
-"use client";
-import Header from '@/app/components/Header'
-import BackgroundSection from '@/app/components/Icon/BackgroundSection'
+'use client';
+import Header from '@/app/components/Header';
+import BackgroundSection from '@/app/components/Icon/BackgroundSection';
 import CardNotable from '@/components/CardNotable';
-import React, { useRef } from 'react';
+import { Coin } from '@/interface';
+import React, { useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 
 function NotablePage() {
+
+  const [coin, setCoin] = useState<any[]>([]);
+  const swiperRef = useRef<any>(null);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          'https://3.106.127.44.nip.io/api/coin-radar-v2s?populate=*&sort[0]=id:asc',
+          {
+            method: 'GET',
+          }
+        );
+        const data = await response.json();
+        setCoin(data.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setCoin([]);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <main className='bg-[#0B090C] pb-10'>
       <section className='relative h-[500px] overflow-hidden md:h-[430px] md:max-h-[1080px] lg:h-[500px] xl:h-screen'>
@@ -29,25 +52,33 @@ function NotablePage() {
           </p>
         </div>
         <div className='mt-[51px] grid grid-cols-12 max-lg:mt-8 max-md:mt-4 md:gap-x-[32px]'>
-          <div className='col-span-full md:col-span-3'>
-          </div>
+          <div className='col-span-full md:col-span-3'></div>
         </div>
       </section>
-      <section className='container' >
-        <div className='grid grid-cols-12  pb-[47px]' >
-          <div className="col-span-full md:col-span-3 border-r border-[#1E9CD7] md:pr-[79px]">
-            <div className='py-[35px] border-b border-[#0C3345]'>
-              <div>
-                <img src="/svg/coin/base.svg" alt="" />
-              </div>
-            </div>
-            <div className='py-[35px] border-b border-[#0C3345]'>
-              <div>
-                <img src="/svg/coin/base.svg" alt="" />
-              </div>
+      <section className='container'>
+        <div className='grid grid-cols-12  pb-[47px]'>
+          <div className='relative col-span-full border-r border-[#1E9CD7] md:col-span-3 md:pr-[79px]'>
+            <div className='sticky top-[20px]'>
+              {
+                coin.map((val, index) => {
+                  return (
+                    <div className='border-b border-[#0C3345] py-[35px]'>
+                      <div className='w-[244px] h-[50px]'>
+                        <img
+                          src={
+                            val?.attributes?.icon
+                              ? val?.attributes?.icon
+                              : '/svg/coin/base.svg'
+                          } />
+
+                      </div>
+                    </div>
+                  )
+                })
+              }
             </div>
           </div>
-          <div className="col-span-full md:col-span-9 md:pl-[75px] space-y-[52px]">
+          <div className='col-span-full space-y-[52px] md:col-span-9 md:pl-[75px]'>
             <CardNotable />
             <CardNotable />
             <CardNotable />
@@ -55,7 +86,7 @@ function NotablePage() {
         </div>
       </section>
     </main>
-  )
+  );
 }
 
-export default NotablePage
+export default NotablePage;
