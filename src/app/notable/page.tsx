@@ -66,13 +66,7 @@ function NotablePage() {
                       key={index}
                       className='border-b border-[#0C3345] py-[35px]'>
                       <div className='w-[244px] h-[50px]'>
-                        <img
-                          src={
-                            val?.attributes?.icon
-                              ? val?.attributes?.icon
-                              : '/svg/coin/base.svg'
-                          } />
-
+                        {val.icon}
                       </div>
                     </div>
                   )

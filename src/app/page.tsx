@@ -11,7 +11,7 @@ import SectionTraffic from '@/app/components/SectionTraffic';
 const HomePage = () => {
 
   return (
-    <main className='bg-[#0B090C] '>
+    <main >
       <SectionHero />
       <SectionTraffic />
       <SectionMission />
