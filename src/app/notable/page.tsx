@@ -62,7 +62,9 @@ function NotablePage() {
               {
                 coin.map((val, index) => {
                   return (
-                    <div className='border-b border-[#0C3345] py-[35px]'>
+                    <div
+                      key={index}
+                      className='border-b border-[#0C3345] py-[35px]'>
                       <div className='w-[244px] h-[50px]'>
                         <img
                           src={
