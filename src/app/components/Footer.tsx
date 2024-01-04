@@ -45,12 +45,12 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div className='col-span-full hidden space-y-[60px]  border-[#005B97] md:col-span-5 md:block  md:border-l md:border-r'>
+            <div className='col-span-full hidden space-y-[60px]  border-[#005B97] md:col-span-4 md:block  md:border-l md:border-r'>
               <div className='font-inter text-center text-[18px] text-[#737373]'>
                 <p>Copyright Radar Network 2023</p>
                 <p>All Rights Resered</p>
               </div>
-              <div className='mx-auto w-full max-w-[140px] md:max-w-[250px] xl:max-w-[380px] 2xl:max-w-[495px]'>
+              <div className='mx-auto w-full max-w-[140px] md:max-w-[250px] '>
                 <img
                   src='/images/logo.png'
                   alt='wrapper hero'
@@ -62,7 +62,7 @@ export default function Footer() {
                 <p>All Rights Resered</p>
               </div>
             </div>
-            <div className='col-span-full flex flex-col justify-between md:col-span-3'>
+            <div className='col-span-full flex flex-col justify-between md:col-span-4'>
               <div className='space-y-[20px]'>
                 <p className='font-syne text-blue text-[30px] font-extrabold capitalize max-sm:text-[24px] md:text-[20px] lg:text-[24px]'>
                   CONTACT

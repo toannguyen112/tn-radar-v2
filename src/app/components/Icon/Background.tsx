@@ -9,8 +9,8 @@ export default function Background() {
     >
       <path
         d='M592.076 1H1V237H1920V107.868H725.867L592.076 1Z'
-        fill='#0B090C'
-        stroke='#0B090C'
+        fill='#0B090B'
+        stroke='#0B090B'
       />
     </svg>
   );
