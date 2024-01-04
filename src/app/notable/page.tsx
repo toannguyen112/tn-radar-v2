@@ -9,12 +9,14 @@ import React, { useEffect, useRef, useState } from 'react';
 function NotablePage() {
 
   const [coin, setCoin] = useState<any[]>([]);
+  const [coinActive, setCoinActive] = useState<any>(null);
+
   const swiperRef = useRef<any>(null);
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await fetch(
-          'https://3.106.127.44.nip.io/api/coin-radar-v2s?populate=*&sort[0]=id:asc',
+          'https://3.106.127.44.nip.io/api/coin-radar-v2s?populate[parent][populate][child][populate]=*&sort[0]=id:asc',
           {
             method: 'GET',
           }
@@ -28,6 +30,17 @@ function NotablePage() {
     }
     fetchData();
   }, []);
+
+
+  const handleTab = (id: number) => {
+    setCoinActive(coin.find((item, index) => {
+      return item.id == id;
+    }));
+
+    console.log(coin);
+    console.log(coinActive);
+
+  }
 
   return (
     <main className='bg-[#0B090C] pb-10'>
@@ -63,11 +76,17 @@ function NotablePage() {
                 coin.map((val, index) => {
                   return (
                     <div
+                      onClick={() => handleTab(val.id)}
                       key={index}
-                      className='border-b border-[#0C3345] py-[35px]'>
-                      <div className='w-[244px] h-[50px]'>
-                        {val.icon}
+                      className='border-b border-[#0C3345] py-[35px] cursor-pointer flex items-center space-x-[32px]'>
+                      <div className='max-w-[244px] h-[50px]' dangerouslySetInnerHTML={{ __html: val.attributes.icon }}>
                       </div>
+                      {
+                        coinActive && coinActive.id == val.id &&
+                        <div className='min-w-[25px] rotate'>
+                          <img src="/svg/active_tab.svg" alt="active_tab" />
+                        </div>
+                      }
                     </div>
                   )
                 })
@@ -75,9 +94,15 @@ function NotablePage() {
             </div>
           </div>
           <div className='col-span-full space-y-[52px] md:col-span-9 md:pl-[75px]'>
-            <CardNotable />
-            <CardNotable />
-            <CardNotable />
+            {
+              coinActive?.attributes?.parent?.map((parent: any, index: number) => {
+                return (
+                  <CardNotable
+                    key={index}
+                    parent={parent} />
+                )
+              })
+            }
           </div>
         </div>
       </section>

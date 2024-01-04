@@ -412,3 +412,18 @@ body {
     90% { transform: translate(10%,5%) }
     100% { transform: translate(5%,0) }
 }
+
+/* Define the keyframes for the animation */
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply the animation to the element */
+.rotate {
+  animation: rotate360 4s linear infinite; /* 4s duration, linear timing, infinite loop */
+}

@@ -16,12 +16,16 @@ declare module 'swiper/react' {
   }
 }
 
-function CardNotable() {
+interface IProps {
+  title: string
+}
+
+function CardNotable({ parent }: any) {
   return (
     <div className='space-y-[54px]'>
       <div className='text-[64px] font-primary text-white flex items-end space-x-[198px]' >
         <div>
-          Text
+          {parent.title || "TEXT"}
         </div>
         <div className='flex items-end space-x-[20px] w-full'>
           <div className='flex items-end space-x-[20px]'>
@@ -58,69 +62,33 @@ function CardNotable() {
           }}
           className='mySwiper'
         >
-          <SwiperSlide >
-            <a href='' className='space-y-[15px]'>
-              <div className='relative overflow-hidden'>
-                <img
-                  src={`/images/frame-card.png`}
-                  alt='image'
-                  className='w-full '
-                />
-                <div className='absolute inset-y-[30px] inset-x-[60px]'>
-                  <img
-                    src={``}
-                    alt='image'
-                    className='h-full w-full  object-contain aspect-w-5 aspect-w-3'
-                  />
-                </div>
-              </div>
-              <div className='font-montserrat text-[24px] text-white font-medium' >
-                Optimis Goes# Supperchain
-              </div>
-            </a>
-          </SwiperSlide>
-          <SwiperSlide >
-            <a href='' className='space-y-[15px]'>
-              <div className='relative overflow-hidden'>
-                <img
-                  src={`/images/frame-card.png`}
-                  alt='image'
-                  className='w-full '
-                />
-                <div className='absolute inset-y-[30px] inset-x-[60px]'>
-                  <img
-                    src={``}
-                    alt='image'
-                    className='h-full w-full  object-contain aspect-w-5 aspect-w-3'
-                  />
-                </div>
-              </div>
-              <div className='font-montserrat text-[24px] text-white font-medium' >
-                Optimis Goes# Supperchain
-              </div>
-            </a>
-          </SwiperSlide>
-          <SwiperSlide >
-            <a href='' className='space-y-[15px]'>
-              <div className='relative overflow-hidden'>
-                <img
-                  src={`/images/frame-card.png`}
-                  alt='image'
-                  className='w-full '
-                />
-                <div className='absolute inset-y-[30px] inset-x-[60px]'>
-                  <img
-                    src={``}
-                    alt='image'
-                    className='h-full w-full  object-contain aspect-w-5 aspect-w-3'
-                  />
-                </div>
-              </div>
-              <div className='font-montserrat text-[24px] text-white font-medium' >
-                Optimis Goes# Supperchain
-              </div>
-            </a>
-          </SwiperSlide>
+          {parent?.child?.map((item: any, index: number) => {
+            return (
+              <SwiperSlide >
+                <a href='' className='space-y-[15px]'>
+                  <div className='relative overflow-hidden'>
+                    <img
+                      src={`/images/frame-card.png`}
+                      alt='image'
+                      className='w-full '
+                    />
+                    <div className='absolute inset-y-[30px] inset-x-[60px]'>
+                      <img
+                        src={`https://3.106.127.44.nip.io${item?.image?.data?.attributes?.url}`}
+                        alt={item.title || ''}
+                        className='h-full w-full  object-contain aspect-w-5 aspect-w-3'
+                      />
+                    </div>
+                  </div>
+                  <div className='font-montserrat text-[24px] text-white font-medium' >
+                    {item.title || ''}
+                  </div>
+                </a>
+              </SwiperSlide>
+            )
+
+          })}
+
         </Swiper>
       </div>
     </div>
