@@ -24,14 +24,14 @@ export default function SectionHeroAbout() {
   return (
     <section className='relative h-[500px] overflow-hidden md:h-[430px] md:max-h-[1080px] lg:h-[500px] xl:h-screen'>
       <Header />
-      {/* <img
+      <img
         src='/video/network.gif'
         alt='Your Alt Text'
         className='absolute inset-0 min-h-full min-w-full object-cover'
-      /> */}
-      <video autoPlay muted loop className='min-w-full object-cover'>
+      />
+      {/* <video autoPlay muted loop className='min-w-full object-cover'>
         <source src={video} type='video/mp4' />
-      </video>
+      </video> */}
       <div className='container h-full '>
         <div className='relative h-full'>
           <div className='font-primary gradient-text max-xs:text-[30px] absolute left-0 top-[230px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>

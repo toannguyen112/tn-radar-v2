@@ -69,15 +69,13 @@ function NotablePage() {
     <main className='pb-10'>
       <section className='relative h-[500px] overflow-hidden md:h-[430px] md:max-h-[1080px] lg:h-[500px] xl:h-screen'>
         <Header />
-        {/* <img
+        <img
           src='/video/network.gif'
           alt='Your Alt Text'
           className='absolute inset-0 min-h-full min-w-full object-cover'
-        /> */}
-        {/* <video autoPlay muted loop className='min-w-full object-cover'>
-          <source src='https://vimeo.com/899789678' type='video/mp4' />
-        </video> */}
-        <iframe
+        />
+
+        {/* <iframe
           title='Vimeo Video'
           src='https://player.vimeo.com/video/899789678'
           width='100%'
@@ -85,7 +83,7 @@ function NotablePage() {
           frameBorder='0'
           allow='autoplay; fullscreen'
           allowFullScreen
-        />
+        /> */}
 
         <div className='z-9 absolute bottom-0 h-[100px] w-full 2xl:max-h-[236px]'>
           <BackgroundSection />

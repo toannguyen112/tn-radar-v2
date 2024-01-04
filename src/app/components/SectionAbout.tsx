@@ -86,14 +86,14 @@ const SectionAbout = () => {
       <div className='mt-[51px] grid grid-cols-12 max-lg:mt-8 max-md:mt-4 md:gap-x-[32px]'>
         <div className='col-span-full md:col-span-3'>
           <div className='aspect-w-1 aspect-h-1 max-h-[5360px]'>
-            {/* <img
+            <img
               src='/video/network.gif'
               alt='Your Alt Text'
               className=' min-w-full object-cover'
-            /> */}
-            <video autoPlay muted loop className='min-w-full object-cover'>
+            />
+            {/* <video autoPlay muted loop className='min-w-full object-cover'>
               <source src={video} type='video/mp4' />
-            </video>
+            </video> */}
           </div>
         </div>
         <div className='col-span-9 col-start-4  space-y-[30px] max-lg:col-span-full max-lg:col-start-1 '>
