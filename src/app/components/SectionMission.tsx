@@ -3,7 +3,9 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useEffect, useRef, useState } from 'react';
 
+// import Splitting from 'splitting';
 import IconMenu from '@/app/components/Icon/IconMenu';
+import ScrollText from '@/app/components/ScrollText';
 
 export default function SectionMission() {
   gsap.registerPlugin(ScrollTrigger);
@@ -16,27 +18,31 @@ export default function SectionMission() {
   const textRef: any = useRef(null);
   const playerRef: any = useRef(null);
   useEffect(() => {
-    // const results = Splitting({ target: textRef.current, by: 'words' });
-    // const words = textRef.current.querySelectorAll('.word');
-    // const tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: playerRef.current,
-    //     start: 'top top',
-    //     end: 'bottom top',
-    //     scrub: 3,
-    //   },
+    // const splitText = new SplitText(textRef.current, {
+    //   type: 'word',
     // });
-    // words.forEach((word: HTMLElement, index: number) => {
-    //   tl.fromTo(
-    //     word,
-    //     { opacity: 0.5 },
-    //     {
-    //       opacity: 1,
-    //       // duration: 10,
-    //       // ease: "power4.out",
-    //     }
-    //   );
-    // });
+
+    const words = textRef.current.querySelectorAll('.word');
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: playerRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 3,
+      },
+    });
+
+    words.forEach((word: HTMLElement, index: number) => {
+      tl.fromTo(
+        word,
+        { opacity: 0.5 },
+        {
+          opacity: 1,
+          // duration: 10,
+          // ease: "power4.out",
+        }
+      );
+    });
   }, [textRef]);
   return (
     <div
@@ -53,16 +59,16 @@ export default function SectionMission() {
               <IconMenu />
             </div>
             <div className='col-span-7' ref={textRef}>
-              <p className='font-montserrat mb-12 text-[28px] font-medium leading-none text-white max-sm:text-[20px]'>
-                We strive to deliver accurate, timely, and easily understandable
+              <ScrollText
+                text='We strive to deliver accurate, timely, and easily understandable
                 information about the ever-evolving landscape of decentralized
-                finance.
-              </p>
-              <p className='font-montserrat text-[28px] font-medium leading-none text-white max-sm:text-[20px]'>
-                Recognizing the immense potential and transformative power of
+                finance.'
+              />
+              <ScrollText
+                text=' Recognizing the immense potential and transformative power of
                 blockchain technology, we are dedicated to ensuring that this
-                potential reaches the widest possible audience.
-              </p>
+                potential reaches the widest possible audience.'
+              />
             </div>
           </div>
         </div>

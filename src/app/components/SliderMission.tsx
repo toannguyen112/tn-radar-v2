@@ -148,7 +148,7 @@ export default function SliderMission() {
       </div>
       <div className=''>
         <Swiper
-          ref={(swiper) => (swiperRef.current = swiper)}
+          // ref={(swiper) => (swiperRef.current = swiper)}
           slidesPerView={1}
           spaceBetween={30}
           centeredSlides={false}
@@ -183,11 +183,7 @@ export default function SliderMission() {
         >
           {coin.map((val: any, index: any) => {
             return (
-              <SwiperSlide
-                key={index}
-                onMouseEnter={() => swiperRef.current?.autoplay.stop()}
-                onMouseLeave={() => swiperRef.current?.autoplay.start()}
-              >
+              <SwiperSlide key={index}>
                 <div className='xxs:h-[170px] xs:h-[230px] relative md:h-[205px] lg:h-[174px] xl:h-[247px] 2xl:h-[247px]'>
                   <div className='absolute right-[43px] top-[14px] max-md:right-[20px] max-md:top-[5px]'>
                     <p className='font-primary text-[24px] capitalize text-white max-md:text-[18px]'>
