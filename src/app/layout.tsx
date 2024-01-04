@@ -89,7 +89,7 @@ export default function RootLayout({
     <html>
       <body className='bg-[#0B090C]'>
         {children}
-        <div className="bg"></div>
+        <div className="bg md:block hidden"></div>
       </body>
     </html>
   );

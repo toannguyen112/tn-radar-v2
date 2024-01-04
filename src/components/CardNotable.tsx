@@ -1,10 +1,12 @@
 import React from 'react'
 
+import { EffectFade, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperType } from "swiper";
 
 // Import Swiper styles
 import 'swiper/css';
-
+import "swiper/css/effect-fade";
 declare module 'swiper/react' {
   interface SwiperProps {
     slidesPerView?: number;
@@ -21,18 +23,27 @@ interface IProps {
 }
 
 function CardNotable({ parent }: any) {
+
+  const navigationPrevRef = React.useRef(null);
+  const navigationNextRef = React.useRef(null);
+  const swiperRef = React.useRef<SwiperType>();
+
   return (
     <div className='space-y-[54px]'>
-      <div className='text-[64px] font-primary text-white flex items-end space-x-[198px]' >
+      <div className='text-[24px] md:text-[64px] font-primary text-white flex md:flex-row flex-col md:items-end lg:space-x-[198px] max-md:space-y-[12px]' >
         <div>
           {parent.title || "TEXT"}
         </div>
         <div className='flex items-end space-x-[20px] w-full'>
           <div className='flex items-end space-x-[20px]'>
-            <div className='border-white border-4 w-[45px] h-[45px] flex items-center justify-center rounded-[12px] cursor-pointer'>
+            <div
+              onClick={() => swiperRef.current?.slidePrev()}
+              className='border-white border-4 w-[45px] h-[45px] flex items-center justify-center rounded-[12px] cursor-pointer'>
               <img src="/svg/arrow/left.svg" alt="" />
             </div>
-            <div className='border-white border-4 w-[45px] h-[45px] flex items-center justify-center rounded-[12px] cursor-pointer'>
+            <div
+              onClick={() => swiperRef.current?.slideNext()}
+              className='border-white border-4 w-[45px] h-[45px] flex items-center justify-center rounded-[12px] cursor-pointer'>
               <img src="/svg/arrow/right.svg" alt="" />
             </div>
           </div>
@@ -42,9 +53,17 @@ function CardNotable({ parent }: any) {
       </div>
       <div className='blur-slider'>
         <Swiper
+          modules={[EffectFade]}
+          navigation={{
+            prevEl: navigationPrevRef.current,
+            nextEl: navigationNextRef.current,
+          }}
+          onBeforeInit={(swiper) => {
+            swiperRef.current = swiper;
+          }}
           slidesPerView={2}
           spaceBetween={25}
-          centeredSlides={true}
+          centeredSlides={false}
           speed={1000}
           breakpoints={{
             768: {
@@ -60,7 +79,6 @@ function CardNotable({ parent }: any) {
               spaceBetween: 30,
             },
           }}
-          className='mySwiper'
         >
           {parent?.child?.map((item: any, index: number) => {
             return (
@@ -80,7 +98,7 @@ function CardNotable({ parent }: any) {
                       />
                     </div>
                   </div>
-                  <div className='font-montserrat text-[24px] text-white font-medium' >
+                  <div className='font-montserrat text-[1rem] md:text-[24px] text-white font-medium' >
                     {item.title || ''}
                   </div>
                 </a>

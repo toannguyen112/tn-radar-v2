@@ -11,7 +11,6 @@ function NotablePage() {
   const [coin, setCoin] = useState<any[]>([]);
   const [coinActive, setCoinActive] = useState<any>(null);
 
-  const swiperRef = useRef<any>(null);
   useEffect(() => {
     async function fetchData() {
       try {
@@ -23,6 +22,9 @@ function NotablePage() {
         );
         const data = await response.json();
         setCoin(data.data);
+        setCoinActive(data.data.length ? data.data.find((item: any) => {
+          return item.id == 1;
+        }) : null)
       } catch (error) {
         console.error('Error fetching data:', error);
         setCoin([]);
@@ -36,9 +38,6 @@ function NotablePage() {
     setCoinActive(coin.find((item, index) => {
       return item.id == id;
     }));
-
-    console.log(coin);
-    console.log(coinActive);
 
   }
 
@@ -56,7 +55,7 @@ function NotablePage() {
         </div>
       </section>
       <section className='container'>
-        <div className='max-lg:mt-8 max-lg:flex max-lg:gap-2 max-md:mt-4'>
+        <div className='max-lg:mt-8 max-lg:flex-col max-lg:gap-2 max-md:mt-4'>
           <p className='font-primary max-xs:text-[24px] text-[64px] font-normal uppercase leading-[60px] text-white  max-lg:text-[45px] max-md:text-[30px]'>
             RADAR
           </p>
@@ -69,7 +68,7 @@ function NotablePage() {
         </div>
       </section>
       <section className='container'>
-        <div className='grid grid-cols-12  pb-[47px]'>
+        <div className='grid grid-cols-12 max-md:gap-[12px] pb-[47px]'>
           <div className='relative col-span-full border-r border-[#1E9CD7] md:col-span-3 md:pr-[79px]'>
             <div className='sticky top-[20px]'>
               {
