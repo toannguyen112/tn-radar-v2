@@ -1,27 +1,23 @@
 'use client';
-import Discord from '@/app/components/Icon/Discord'
-import Telegram from '@/app/components/Icon/Telegram'
-import Twitter from '@/app/components/Icon/Twitter'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+
+import Discord from '@/app/components/Icon/Discord';
+import Telegram from '@/app/components/Icon/Telegram';
+import Twitter from '@/app/components/Icon/Twitter';
 
 function Social() {
-
   const [setting, setSetting] = useState<any>([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(
-          'https://3.106.127.44.nip.io/api/config',
-          {
-            method: 'GET',
-          }
-        );
+        const response = await fetch('https://3.106.127.44.nip.io/api/config', {
+          method: 'GET',
+        });
         const data = await response.json();
 
         setSetting(data.data.attributes);
-        console.log(data.data.attributes);
-
+        // console.log(data.data.attributes);
       } catch (error) {
         console.error('Error fetching data:', error);
         setSetting([]);
@@ -48,7 +44,7 @@ function Social() {
         </a>
       </div>
     </div>
-  )
+  );
 }
 
-export default Social
+export default Social;

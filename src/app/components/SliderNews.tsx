@@ -18,6 +18,7 @@ interface News {
   attributes: {
     isNew: boolean;
     link: string;
+    title: string;
     thumbnail: {
       data: {
         attributes: {
@@ -42,6 +43,7 @@ function SliderNews() {
         );
 
         const data = await response.json();
+        console.log(data.data);
         setLastNews(data.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -53,14 +55,14 @@ function SliderNews() {
   return (
     <div className='blur-slider '>
       <Swiper
-        slidesPerView={3}
+        slidesPerView={1}
         spaceBetween={30}
         centeredSlides={true}
         speed={1000}
         loop={true}
         breakpoints={{
           768: {
-            slidesPerView: 2.8,
+            slidesPerView: 2,
             spaceBetween: 20,
           },
           1024: {
@@ -79,15 +81,15 @@ function SliderNews() {
             return (
               <SwiperSlide key={index}>
                 <a href={post?.attributes?.link} className='space-y-[15px]'>
-                  <div className='overflow-hidden rounded-xl border border-[#323232] bg-[#18181A] aspect-w-5 aspect-h-3 max-h-[325px]'>
+                  <div className='aspect-w-5 aspect-h-3 max-h-[325px] overflow-hidden rounded-xl border border-[#323232] bg-[#18181A] max-md:aspect-square'>
                     <img
                       src={`https://3.106.127.44.nip.io${post?.attributes?.thumbnail?.data?.attributes?.url}`}
                       alt='image'
                       className='slider-image-content  h-full w-full  object-contain'
                     />
                   </div>
-                  <div className='font-montserrat text-[32px] text-white font-bold' >
-                    Optimis Goes# Supperchain
+                  <div className='font-montserrat text-[32px] font-bold text-white max-lg:text-[20px] max-sm:text-[16px]'>
+                    {post?.attributes?.title}
                   </div>
                 </a>
               </SwiperSlide>

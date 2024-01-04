@@ -48,7 +48,7 @@ const arrayCollapse = [
     content: `By quote tweet your posts on our Twitter feed, we'll amplify the reach of your message, connecting you with an expansive network of engaged followers.`,
   },
 ];
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import DiscordAbout from '@/app/components/Icon/DiscordAbout';
@@ -57,11 +57,26 @@ import TelegramAbout from '@/app/components/Icon/TelegramAbout';
 import TwitterAbout from '@/app/components/Icon/TwitterAbout';
 
 const SectionAbout = () => {
-  const [selectedItem, setSelectedItem] = useState(null);
-
+  const [selectedItem, setSelectedItem] = useState('');
+  const [video, setVideo] = useState<any>();
   const handleItemClick = (index: any) => {
     setSelectedItem(selectedItem === index ? null : index);
   };
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('https://3.106.127.44.nip.io/api/config', {
+          method: 'GET',
+        });
+        const data = await response.json();
+        data.video_homepage ? setVideo(data.video_homepage) : setVideo('');
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setVideo('');
+      }
+    }
+    fetchData();
+  }, []);
 
   return (
     <section className='container '>
@@ -71,11 +86,14 @@ const SectionAbout = () => {
       <div className='mt-[51px] grid grid-cols-12 max-lg:mt-8 max-md:mt-4 md:gap-x-[32px]'>
         <div className='col-span-full md:col-span-3'>
           <div className='aspect-w-1 aspect-h-1 max-h-[5360px]'>
-            <img
+            {/* <img
               src='/video/network.gif'
               alt='Your Alt Text'
               className=' min-w-full object-cover'
-            />
+            /> */}
+            <video autoPlay muted loop className='min-w-full object-cover'>
+              <source src={video} type='video/mp4' />
+            </video>
           </div>
         </div>
         <div className='col-span-9 col-start-4  space-y-[30px] max-lg:col-span-full max-lg:col-start-1 '>
@@ -85,23 +103,27 @@ const SectionAbout = () => {
               <>
                 <div
                   key={index}
-                  className={`flex h-[70px] w-full items-center justify-between rounded-xl border border-[#737373] px-[30px] py-[15px] transition-all duration-200 ${isSelected ? 'bg-[#005B97] duration-200' : 'duration-200'
-                    }`}
+                  className={`flex h-[70px] w-full items-center justify-between rounded-xl border border-[#737373] px-[30px] py-[15px] transition-all duration-200 ${
+                    isSelected ? 'bg-[#005B97] duration-200' : 'duration-200'
+                  }`}
                   onClick={() => handleItemClick(index)}
                 >
                   <p className='font-montserrat text-[32px] font-medium capitalize text-white max-lg:text-[20px] max-md:text-[14px]'>
                     {index + 1 + '. ' + val.title}
                   </p>
                   <div
-                    className={`cursor-pointer ${isSelected ? 'rotate-[90deg] duration-200' : ''
-                      }`}
+                    className={`cursor-pointer ${
+                      isSelected
+                        ? 'rotate-[90deg] duration-500 ease-in'
+                        : 'duration-500 ease-in'
+                    }`}
                   >
                     <More />
                   </div>
                 </div>
                 {isSelected && (
-                  <div className='mt-2  grid grid-cols-12  justify-between text-white transition-all duration-200 font-montserrat'>
-                    <p className='col-span-5 max-md:col-span-full font-bold'>
+                  <div className='font-montserrat  mt-2 grid  grid-cols-12 justify-between text-white transition-all duration-200'>
+                    <p className='col-span-5 font-bold max-md:col-span-full'>
                       {val.title}
                     </p>
                     <p className='col-span-7 text-left max-md:col-span-full max-md:mt-2'>
