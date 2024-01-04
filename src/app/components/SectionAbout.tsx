@@ -100,8 +100,8 @@ const SectionAbout = () => {
                   </div>
                 </div>
                 {isSelected && (
-                  <div className='mt-2  grid grid-cols-12 items-center justify-between text-white transition-all duration-200 font-montserrat'>
-                    <p className='col-span-5 max-md:col-span-full'>
+                  <div className='mt-2  grid grid-cols-12  justify-between text-white transition-all duration-200 font-montserrat'>
+                    <p className='col-span-5 max-md:col-span-full font-bold'>
                       {val.title}
                     </p>
                     <p className='col-span-7 text-left max-md:col-span-full max-md:mt-2'>

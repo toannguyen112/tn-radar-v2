@@ -1,6 +1,7 @@
 import Discord from '@/app/components/Icon/Discord';
 import Telegram from '@/app/components/Icon/Telegram';
 import Twitter from '@/app/components/Icon/Twitter';
+import Social from '@/app/components/Social';
 
 export default function Footer() {
   return (
@@ -67,17 +68,7 @@ export default function Footer() {
                 <p className='font-syne text-blue text-[30px] font-extrabold capitalize max-sm:text-[24px] md:text-[20px] lg:text-[24px]'>
                   CONTACT
                 </p>
-                <div className='flex items-center space-x-[19px]'>
-                  <div className='lg:hover:border-blue lg:hover:bg-blue flex h-[35px] w-[35px] items-center justify-center rounded border border-white duration-300 ease-in-out max-lg:h-8 max-lg:w-8'>
-                    <Discord />
-                  </div>
-                  <div className='lg:hover:border-blue lg:hover:bg-blue flex h-[35px] w-[35px]  items-center justify-center rounded border border-white duration-300 ease-in-out max-lg:h-8 max-lg:w-8'>
-                    <Telegram />
-                  </div>
-                  <div className='lg:hover:border-blue lg:hover:bg-blue flex h-[35px] w-[35px]  items-center justify-center rounded border border-white duration-300 ease-in-out max-lg:h-8 max-lg:w-8'>
-                    <Twitter />
-                  </div>
-                </div>
+                <Social />
               </div>
               <div className='font-inter space-y-[20px] text-[18px] text-[#737373] max-md:mt-5 xl:space-y-[30px]'>
                 <div>Report</div>

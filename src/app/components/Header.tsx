@@ -6,6 +6,7 @@ import DiscordHeader from '@/app/components/Icon/DiscordHeader';
 import Menu from '@/app/components/Icon/Menu';
 import TelegramHeader from '@/app/components/Icon/TelegramHeader';
 import TwitterHeader from '@/app/components/Icon/TwitterHeader';
+import Social from '@/app/components/Social';
 
 export default function Header() {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,9 +15,8 @@ export default function Header() {
     <div className='relative'>
       <div
         onMouseLeave={() => setIsHovered(false)}
-        className={`duration-400 absolute left-0 top-0 z-20 w-full transform rounded-2xl border border-[#0B090C] bg-[#0B090C] pb-10 transition-transform max-xl:pb-6 max-md:pb-4 ${
-          isHovered ? ' translate-y-0' : ' -translate-y-full'
-        }`}
+        className={`duration-400 absolute left-0 top-0 z-20 w-full transform rounded-2xl border border-[#0B090C] bg-[#0B090C] pb-10 transition-transform max-xl:pb-6 max-md:pb-4 ${isHovered ? ' translate-y-0' : ' -translate-y-full'
+          }`}
       >
         <div className='container pt-5'>
           <div className='flex items-center justify-between'>
@@ -85,16 +85,13 @@ export default function Header() {
             </div>
           </div>
           <div className='mt-[50px] flex items-center gap-5 max-xl:hidden'>
-            <TwitterHeader />
-            <DiscordHeader />
-            <TelegramHeader />
+            <Social />
           </div>
         </div>
       </div>
       <div
-        className={`container absolute left-1/2 z-10 w-full -translate-x-1/2 items-center pt-[33px] ${
-          isHovered ? 'slide-down-enter slide-down-enter-active' : ''
-        }`}
+        className={`container absolute left-1/2 z-10 w-full -translate-x-1/2 items-center pt-[33px] ${isHovered ? 'slide-down-enter slide-down-enter-active' : ''
+          }`}
       >
         <div className='border-blue flex items-center justify-between rounded-[10px] border bg-[#0C334580] px-[50px] py-5 max-lg:px-[30px] max-md:px-[20px]'>
           <Link href='/'>
@@ -107,9 +104,7 @@ export default function Header() {
             </div>
           </Link>
           <div className='flex items-center gap-5 max-lg:hidden'>
-            <TwitterHeader />
-            <DiscordHeader />
-            <TelegramHeader />
+            <Social />
           </div>
           <div
             onClick={() => setIsHovered(true)}
