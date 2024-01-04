@@ -14,7 +14,8 @@ export default function SectionHero() {
       >
         <source src='/video/network.mp4' type='video/mp4' />
       </video>
-      <div className='container h-full '>
+
+      <div className='container h-full'>
         <div className='relative h-full'>
           <div className='font-primary gradient-text xxs:text-[30px] absolute left-0	top-[230px] font-normal uppercase leading-[110%] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[96px]'>
             <FlickerText text='Unravels' />
