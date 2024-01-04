@@ -42,7 +42,7 @@ function NotablePage() {
   }
 
   return (
-    <main className='bg-[#0B090C] pb-10'>
+    <main className='pb-10'>
       <section className='relative h-[500px] overflow-hidden md:h-[430px] md:max-h-[1080px] lg:h-[500px] xl:h-screen'>
         <Header />
         <img

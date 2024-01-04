@@ -8,6 +8,7 @@ import '@/styles/colors.css';
 
 import { siteConfig } from '@/constant/config';
 import NoiseBackground from '@/app/components/NoiseBackground';
+import Footer from '@/app/components/Footer';
 
 // !STARTERCONF Change these default meta
 // !STARTERCONF Look at @/constant/config to change them
@@ -60,9 +61,10 @@ export default function RootLayout({
 
   return (
     <html>
-      <body className='bg-[#0B090C]'>
+      <body>
         {children}
         <NoiseBackground />
+        <Footer />
       </body>
     </html>
   );

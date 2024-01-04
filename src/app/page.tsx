@@ -17,7 +17,6 @@ const HomePage = () => {
       <SectionMission />
       <SectionLastNews />
       <SectionRadarNews />
-      <Footer />
     </main>
   );
 };
