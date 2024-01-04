@@ -15,6 +15,8 @@ declare module 'swiper/react' {
     centeredSlides?: boolean;
     speed?: number;
     loop?: boolean;
+    effect?: string;
+    navigation?: any;
   }
 }
 
