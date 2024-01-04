@@ -64,7 +64,7 @@ function CardNotable({ parent }: any) {
         >
           {parent?.child?.map((item: any, index: number) => {
             return (
-              <SwiperSlide >
+              <SwiperSlide key={index} >
                 <a href='' className='space-y-[15px]'>
                   <div className='relative overflow-hidden'>
                     <img
