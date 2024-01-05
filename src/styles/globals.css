@@ -431,7 +431,7 @@ body {
 /* Slider CSS logic */
 .slider {
   --slider-inner-width: 2500px;
-  --slider-speed: 12s;
+  --slider-speed: 18s;
 }
 
 @keyframes scroll {
