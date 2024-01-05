@@ -21,7 +21,7 @@ export default function SectionLastNews() {
                 </p>
               </div>
             </div>
-            <div className='absolute bottom-[-6px] right-[-23px]'>
+            <div className='absolute 2xl:bottom-[-6px]  xl:bottom-[-25px] bottom-[-25px] right-[-23px]'>
               <IconStar />
             </div>
             <div className='absolute left-1/2 top-[-25px] -translate-x-1/2'>
