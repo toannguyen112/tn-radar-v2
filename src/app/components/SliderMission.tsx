@@ -1,81 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
-import { Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 
 import DiscordHeader from '@/app/components/Icon/DiscordHeader';
 import TelegramHeader from '@/app/components/Icon/TelegramHeader';
 import TwitterHeader from '@/app/components/Icon/TwitterHeader';
-
-// const arrayMission = [
-//   {
-//     index: '001',
-//     content:
-//       'With Polygon Radar, we provide fresh updates, detailed insights, on-chain analysis, and comprehensive data analytics in a vibrant green and purple spectrum.',
-//     image: '/images/is-1.png',
-//   },
-//   {
-//     index: '002',
-//     content:
-//       'zkSync Radar is your go-to source for insights, news, and analytics on the revolutionary zkSync Era – the future-proof scaling solution for zkEVM.',
-//     image: '/images/is-2.png',
-//   },
-//   {
-//     index: '003',
-//     content:
-//       'Meet Base Radar, your gateway to the future of blockchain. As the media platform for Base, we bring you vital insights, news, and analytics on this secure, low-cost Ethereum Layer 2 designed to onboard the next billion users to the decentralized realm.',
-//     image: '/images/is-3.png',
-//   },
-//   {
-//     index: '004',
-//     content:
-//       'Discover the future with Optimism Radar, your media ally for essential insights on Optimism—a swift, stable, and scalable Layer 2 blockchain. Stay ahead with vital news and analytics as we unravel the possibilities of this cutting-edge technology.',
-//     image: '/images/is-4.png',
-//   },
-//   {
-//     index: '005',
-//     content:
-//       'Step into the cosmic frontier with Cosmos Radar, your media companion for crucial insights on Cosmos—the Internet of Blockchains. Stay tuned for essential news and analytics as we journey through the interconnected universe of decentralized possibilities.',
-//     image: '/images/is-5.png',
-//   },
-//   {
-//     index: '006',
-//     content:
-//       'Embark on the future with Linea Radar, your media ally for critical insights on Linea—the pioneering evolution of ConsenSys zkEVM. Stay informed with essential news and analytics as Linea powers the new wave of decentralized applications.',
-//     image: '/images/is-6.png',
-//   },
-//   {
-//     index: '007',
-//     content:
-//       'Mantle Radar is your media ally for crucial insights on Mantle—an L2 scalability solution elevating Ethereum. Stay tuned for essential news and analytics as we navigate the evolving realm of blockchain efficiency and scalability.',
-//     image: '/images/is-7.png',
-//   },
-//   {
-//     index: '008',
-//     content:
-//       'Discover the vibrant world of BNB Chain through BNB Radar, a trusted media outlet offering valuable perspectives on this dynamic blockchain ecosystem. Uncover revolutionary scaling solutions at both the Layer-1 and Layer-2 levels.',
-//     image: '/images/is-8.png',
-//   },
-//   {
-//     index: '009',
-//     content:
-//       'Unleash the Blockchain Revolution with Layer2 Radar! Dive into the epicenter of Layer 2 platforms as we redefine the future of blockchain. Your go-to media for all things Layer 2 – where innovation knows no bounds!',
-//     image: '/images/is-9.png',
-//   },
-//   {
-//     index: '010',
-//     content:
-//       'Unleash the Blockchain Revolution with Layer2 Radar! Dive into the epicenter of Layer 2 platforms as we redefine the future of blockchain. Your go-to media for all things Layer 2 – where innovation knows no bounds!',
-//     image: '/images/is-10.png',
-//   },
-//   {
-//     index: '011',
-//     content:
-//       'Unleash the Blockchain Revolution with Layer2 Radar! Dive into the epicenter of Layer 2 platforms as we redefine the future of blockchain. Your go-to media for all things Layer 2 – where innovation knows no bounds!',
-//     image: '/images/is-11.png',
-//   },
-// ];
+const initialLogos = [
+  'https://i.ibb.co/Vv5rkDK/api-partner-verzon.png',
+  'https://i.ibb.co/J399KDg/api-partner-netflix.png',
+  'https://i.ibb.co/TKT0F5L/api-partner-yelp.png',
+  'https://i.ibb.co/HG6KR89/api-partner-adobe.png',
+  'https://i.ibb.co/hMSJ1sg/api-partner-ring.png',
+  'https://i.ibb.co/4RWQcMS/api-partner-nespresso.png',
+];
 
 declare module 'swiper/react' {
   interface SwiperProps {
@@ -131,13 +68,9 @@ export default function SliderMission() {
     }
     fetchData();
   }, []);
-  // useEffect(() => {
-  //   if (swiperRef.current) {
-  //     swiperRef.current.autoplay.start();
-  //   }
-  // }, [coin]);
+
   return (
-    <div className='mt-[105px] max-lg:mt-8 max-md:mt-4'>
+    <div className='mt-[80px] max-lg:mt-8 max-md:mt-4'>
       <div className='xs:mb-[32px] mb-[74px] max-lg:flex max-lg:gap-2 max-md:mb-4'>
         <p className='font-primary max-xs:text-[24px] text-[64px] font-normal uppercase leading-[60px] text-white max-lg:text-[45px] max-md:text-[30px]'>
           RADAR
@@ -146,93 +79,102 @@ export default function SliderMission() {
           Network
         </p>
       </div>
-      <div className=''>
-        <Swiper
-          // ref={(swiper) => (swiperRef.current = swiper)}
-          slidesPerView={1}
-          spaceBetween={30}
-          centeredSlides={false}
-          modules={[Autoplay]}
-          loop={true}
-          speed={12000}
-          autoplay={{
-            delay: 0,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          // freeMode={true}
-          breakpoints={{
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 24,
-            },
-            1440: {
-              slidesPerView: 3,
-              spaceBetween: 35,
-            },
-            1920: {
-              slidesPerView: 4,
-              spaceBetween: 40,
-            },
-          }}
-          className='mySwiper xs:h-[335px] max-xs:h-[290px] 2xl: xl:h-[431px]'
-        >
-          {coin.map((val: any, index: any) => {
-            return (
-              <SwiperSlide key={index}>
-                <div className='xxs:h-[170px] xs:h-[230px] relative md:h-[205px] lg:h-[174px] xl:h-[247px] 2xl:h-[247px]'>
-                  <div className='absolute right-[43px] top-[14px] max-md:right-[20px] max-md:top-[5px]'>
-                    <p className='font-primary text-[24px] capitalize text-white max-md:text-[18px]'>
-                      {'00' + (index + 1)}
-                    </p>
-                  </div>
-                  <img
-                    src='/images/bgMission.png'
-                    alt='wrapper hero'
-                    className='h-full w-full object-cover'
-                  />
-                  <div className='absolute left-1/2 top-1/2  -translate-x-1/2 -translate-y-1/2'>
-                    <div className='overflow-hidden '>
-                      <img
-                        src={
-                          val?.attributes?.thumbnail?.data?.attributes?.url
-                            ? `https://3.106.127.44.nip.io${val?.attributes?.thumbnail?.data?.attributes?.url}`
-                            : '/images/is-10.png'
-                        }
-                        alt='wrapper hero'
-                        className='max-h-[152px]'
-                      />
+      <div className='flex-container mt-4'>
+        <div className='slider-container h-[450px] max-md:h-[350px]'>
+          <ul className='slider gap-5 '>
+            {coin.map((val: any, index: any) => {
+              return (
+                <div key={index} className='w-[400px] max-sm:w-[267px]'>
+                  <div className='xxs:h-[157px] xs:h-[157px] relative md:h-[237px] lg:h-[237px] xl:h-[237px] 2xl:h-[237px]'>
+                    <div className='absolute right-[43px] top-[14px] max-md:right-[20px] max-md:top-[5px]'>
+                      <p className='font-primary text-[24px] capitalize text-white max-md:text-[18px]'>
+                        {'00' + (index + 1)}
+                      </p>
                     </div>
-                  </div>
-                  <div className='absolute bottom-0 left-1/2 -translate-x-1/2 '>
-                    <div className='relative h-8 w-full'>
-                      <div className='absolute -bottom-full left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-5  '>
-                        <a target='_blank' href={val.attributes.x_link}>
-                          <TwitterHeader />
-                        </a>
-                        <a target='_blank' href={val.attributes.discord_link}>
-                          <DiscordHeader />
-                        </a>
-                        <a target='_blank' href={val.attributes.telegram_link}>
-                          <TelegramHeader />
-                        </a>
+                    <img
+                      src='/images/bgMission.png'
+                      alt='wrapper hero'
+                      className='h-full w-full object-cover'
+                    />
+                    <div className='absolute left-1/2 top-1/2  -translate-x-1/2 -translate-y-1/2'>
+                      <div className='overflow-hidden '>
+                        <img
+                          src={
+                            val?.attributes?.thumbnail?.data?.attributes?.url
+                              ? `https://3.106.127.44.nip.io${val?.attributes?.thumbnail?.data?.attributes?.url}`
+                              : '/images/is-10.png'
+                          }
+                          alt='wrapper hero'
+                          className='max-h-[152px]'
+                        />
                       </div>
                     </div>
-                  </div>
-                  <div className='mt-[38px]'>
-                    <p className='font-Khyay text-xs text-white md:px-[27px]'>
-                      {val.attributes.description}
-                    </p>
+                    <div className='absolute bottom-0 left-1/2 -translate-x-1/2 '>
+                      <div className='relative h-8 w-full'>
+                        <div className='absolute -bottom-full left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-5  '>
+                          <a target='_blank' href={val.attributes.x_link}>
+                            <TwitterHeader />
+                          </a>
+                          <a target='_blank' href={val.attributes.discord_link}>
+                            <DiscordHeader />
+                          </a>
+                          <a
+                            target='_blank'
+                            href={val.attributes.telegram_link}
+                          >
+                            <TelegramHeader />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div className='mt-[38px]'>
+                      <p className='font-Khyay text-xs text-white md:px-[27px]'>
+                        {val.attributes.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+              );
+            })}
+
+            {/* <li className='slider__slide'>
+              <div className='slide__content'>1</div>
+            </li>
+            <li className='slider__slide'>
+              <div className='slide__content'>2</div>
+            </li>
+            <li className='slider__slide'>
+              <div className='slide__content'>3</div>
+            </li>
+            <li className='slider__slide'>
+              <div className='slide__content'>1</div>
+            </li>
+            <li className='slider__slide'>
+              <div className='slide__content'>2</div>
+            </li>
+            <li className='slider__slide'>
+              <div className='slide__content'>3</div>
+            </li>
+            <li className='slider__slide'>
+              <div className='slide__content'>1</div>
+            </li>
+            <li className='slider__slide'>
+              <div className='slide__content'>2</div>
+            </li>
+            <li className='slider__slide'>
+              <div className='slide__content'>3</div>
+            </li>
+            <li className='slider__slide'>
+              <div className='slide__content'>1</div>
+            </li>
+            <li className='slider__slide'>
+              <div className='slide__content'>2</div>
+            </li>
+            <li className='slider__slide'>
+              <div className='slide__content'>3</div>
+            </li> */}
+          </ul>
+        </div>
       </div>
     </div>
   );

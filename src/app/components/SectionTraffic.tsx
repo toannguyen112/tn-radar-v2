@@ -55,7 +55,7 @@ export default function SectionTraffic() {
                   alt='wrapper hero'
                   className='h-full w-full object-cover'
                 />
-                <div className='absolute left-5 top-5 w-full '>
+                <div className='absolute left-5 top-5'>
                   <p className='font-montserrat text-left text-[24px] font-semibold uppercase text-[#46ABDD] max-xl:text-[16px]'>
                     {val.title}
                   </p>

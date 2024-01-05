@@ -28,7 +28,10 @@ export default function SectionMission() {
         trigger: playerRef.current,
         start: 'top top',
         end: 'bottom top',
-        scrub: 3,
+        scrub: 0, // Set scrub to 0
+        onUpdate: (self) => {
+          tl.progress(self.progress * 2);
+        },
       },
     });
 
@@ -46,10 +49,10 @@ export default function SectionMission() {
   }, [textRef]);
   return (
     <div
-      className='container mt-[126px] h-[300vh] max-lg:mt-8 max-md:mt-4'
+      className='container mt-[126px] max-lg:mt-8 max-md:mt-4'
       ref={playerRef}
     >
-      <div className='sticky top-0'>
+      <div className='top-0'>
         <p className='font-primary max-xs:text-[40px] text-[64px] font-normal uppercase leading-[60px] text-[#1E9CD7] max-md:text-[50px]'>
           Mission
         </p>
