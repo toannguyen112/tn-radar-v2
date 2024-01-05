@@ -30,7 +30,7 @@ export default function SectionMission() {
         end: 'bottom top',
         scrub: 0, // Set scrub to 0
         onUpdate: (self) => {
-          tl.progress(self.progress * 2);
+          tl.progress(self.progress * 1.5);
         },
       },
     });
