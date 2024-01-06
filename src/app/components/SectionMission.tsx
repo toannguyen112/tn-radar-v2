@@ -57,21 +57,30 @@ export default function SectionMission() {
           Mission
         </p>
         <div className='mt-[84px] grid grid-cols-12 items-center max-lg:mt-8 max-md:mt-4'>
-          <div className='col-span-8 col-start-3 m-auto flex items-start gap-[54px] max-lg:col-span-12 max-lg:col-start-1 max-lg:gap-[25px]'>
+          <div className='col-span-8 col-start-3 m-auto flex h-full items-start gap-[54px] max-lg:col-span-12 max-lg:col-start-1 max-lg:gap-[25px]'>
             <div className='col-span-1 flex items-center justify-center'>
               <IconMenu />
             </div>
-            <div className='col-span-7' ref={textRef}>
-              <ScrollText
-                text='We strive to deliver accurate, timely, and easily understandable
-                information about the ever-evolving landscape of decentralized
-                finance.'
-              />
-              <ScrollText
-                text=' Recognizing the immense potential and transformative power of
-                blockchain technology, we are dedicated to ensuring that this
-                potential reaches the widest possible audience.'
-              />
+            <div className='col-span-7 h-full' ref={textRef}>
+              <div
+                className='h-full flex-col items-center justify-center'
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                }}
+              >
+                <ScrollText
+                  text='We strive to deliver accurate, timely, and easily understandable
+                  information about the ever-evolving landscape of decentralized
+                  finance.'
+                />
+                <ScrollText
+                  text='Recognizing the immense potential and transformative power of
+                  blockchain technology, we are dedicated to ensuring that this
+                  potential reaches the widest possible audience.'
+                />
+              </div>
             </div>
           </div>
         </div>
